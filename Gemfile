@@ -39,3 +39,5 @@ gem 'twitter'
 # gem 'debugger', group: [:development, :test]
 
 gem 'hirb'
+
+gem 'nas-yahoo_stock'
