@@ -9,16 +9,22 @@
 	border: 1px solid black;
 	border-radius: 10px;
 	overflow: hidden;
-
 	margin: 10px;
+	width: 40%;
+
 
 }
 
 .profile_pic{
-	display: inline-block;
+	float: left;
 
 }
 
 .tweet_content{
-	display: inline-block;
+
+
+}
+
+.retweets{
+	float: right;
 }
