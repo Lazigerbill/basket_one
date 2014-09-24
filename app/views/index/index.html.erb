@@ -1,15 +1,13 @@
 <h1>Hello World</h1>
 
 
-
+<% counter = 0 %>
 <% @tweets.each do |key, value| %>
-	<%= key[:count] %> <br>
-	<%= key[:text] %> <br>
-	<%= key[:username] %> <br>
-	<%= key[:tweet_created_at] %> <br>
+	<%= image_tag (key[:profile_img_url]) %> <%= key[:text] %> <br>
+	by <em><%= key[:username] %></em> <%= key[:tweet_created_at] %> <br>
+	retweets: <%= key[:retweet_count] %> <br>
+	<% counter += 1 %>
+<% end %>
 
-
-	<% end %>
-
-
+There are <%= counter %> tweets!
 
