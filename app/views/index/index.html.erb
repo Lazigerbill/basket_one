@@ -13,14 +13,17 @@
 			</div>
 		</div>
 		
-		<div id = "pre_close">Previous Close: 56.87</div>
+		<div id = "pre_close">
+			Previous Close: 56.87
+			<div id = "last_update">Last updated: <%= Time.now %></div>
+		</div>
 		<div id = "range">52-week range 45.39 - 58.20</div>
 	</div>
 </div>
 
 
 <!-- This is the Twitter window -->
-<div class = "twitter window">
+<div class = "twitter_window">
 	<% counter = 0 %>
 	<% @tweets.each do |key, value| %>
 		<div class = "tweet">

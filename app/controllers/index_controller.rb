@@ -3,7 +3,7 @@ class IndexController < ApplicationController
 
 		get_authorized
 		search_tweets('$TD')
-		sort_tweets_for_the_past_number_of_days(3)
+		sort_tweets_for_the_past_number_of_days(1)
 	end
 
 private	

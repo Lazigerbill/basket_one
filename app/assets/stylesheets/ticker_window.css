@@ -3,7 +3,9 @@
 	width: 590px;
 	height: 393px;
 	padding: 20px;
-
+	border-radius: 10px;
+	float: left;
+	margin: 10px;
 }
 
 .ticker_window_box{
@@ -24,7 +26,6 @@
 	font-size: 40px;
 	font-family: "Verdana";
 	text-align: center;
-
 }
 
 .tick_arrow{
@@ -49,6 +50,11 @@
 	margin-left: 10px;
 	margin-top: 25px;
 	font-size: 20px;
+}
+
+#last_update{
+	margin-top: 15px;
+	font-size: 10px;
 }
 
 #range{

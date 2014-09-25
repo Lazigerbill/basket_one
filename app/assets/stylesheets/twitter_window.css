@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.twitter_window{
+	float: right;
+	margin: 10px;
+}
 
 .tweet{
 	background-color: rgba(0, 0, 0, 0.8);
@@ -9,15 +13,12 @@
 	border: 1px solid black;
 	border-radius: 10px;
 	overflow: hidden;
-	margin: 10px;
+	margin: 5px;
 	width: 40%;
-
-
 }
 
 .profile_pic{
 	float: left;
-
 }
 
 .tweet_content{
