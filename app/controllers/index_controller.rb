@@ -2,12 +2,13 @@ class IndexController < ApplicationController
 	def index
 
 		get_authorized
-		search_tweets('$AAPL')
+		search_tweets('$TD')
+		sort_tweets_for_the_past_number_of_days(3)
 	end
 
 private	
 	def get_authorized
-		@tweets = Tweet.where(:tweet_created_at => 7.day.ago..Time.now).order(:tweet_created_at).reverse_order
+		
 		@client = Twitter::REST::Client.new do |config|
 		config.consumer_key        = "KWfNGEf1dfGMJZ5qZNOsQJ1ap"
 		config.consumer_secret     = "YU9EPrGwgdjv1ujt6HVxo7jrMbbgs5gabUeeaXHQF59IwLi9Rf"
@@ -17,7 +18,7 @@ private
 	end
 
 	def search_tweets(ticker)
-		@client.search((ticker), :result_type => "mixed").take(300).each do |tweet|
+		@client.search((ticker), :result_type => "mixed").take(100).each do |tweet|
 			unless Tweet.exists?(['tweet_created_at = ? AND user_id = ?', tweet.created_at, tweet.user.id])
 				@tweet = Tweet.new
 				@tweet.update_attributes(
@@ -31,4 +32,9 @@ private
 			end
 		end
 	end
+
+	def sort_tweets_for_the_past_number_of_days(days)
+		@tweets = Tweet.where(:tweet_created_at => (days).day.ago..Time.now).order(:tweet_created_at).reverse_order   
+	end
+
 end

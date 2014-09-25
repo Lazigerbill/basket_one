@@ -1,19 +1,38 @@
 <h1>Hello World</h1>
 
+<!-- This is the ticker part -->
 
-<% counter = 0 %>
-
-	<% @tweets.each do |key, value| %>
-<div class = "tweet">
-		<div class = "profile_pic"><%= image_tag (key[:profile_img_url]) %> </div>
-		<div class = "tweet_content"> 
-			<%= key[:text] %> <br>
-			by <em><%= key[:username] %></em> <%= key[:tweet_created_at] %> 
-			<div class ="retweets">retweets: <%= key[:retweet_count] %></div> <br>
+<div class = "ticker_window">
+	<div class = "ticker_window_box">	
+		<div id = "company"><img class = "logo" src="http://logonoid.com/images/td-bank-logo.png" alt=""></img>Toronto Dominion Bank</div><br>
+		<div id = "last">
+			<img class = "tick_arrow" src="http://www.clipartbest.com/cliparts/RTG/6or/RTG6orRrc.gif" alt="">
+			56.42
+			<div id = "change">
+				-0.45 (-0.79%)
+			</div>
 		</div>
+		
+		<div id = "pre_close">Previous Close: 56.87</div>
+		<div id = "range">52-week range 45.39 - 58.20</div>
+	</div>
 </div>
+
+
+<!-- This is the Twitter window -->
+<div class = "twitter window">
+	<% counter = 0 %>
+	<% @tweets.each do |key, value| %>
+		<div class = "tweet">
+			<div class = "profile_pic"><%= image_tag (key[:profile_img_url]) %> </div>
+			<div class = "tweet_content"> 
+				<%= key[:text] %> <br>
+				by <em><%= key[:username] %></em> <%= key[:tweet_created_at] %> 
+				<div class ="retweets">retweets: <%= key[:retweet_count] %></div> <br>
+			</div>
+		</div>
 		<% counter += 1 %>
 	<% end %>
-
-There are <%= counter %> tweets!
+	There are <%= counter %> tweets!
+</div>
 
