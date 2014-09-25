@@ -2,8 +2,9 @@ class IndexController < ApplicationController
 	def index
 
 		get_authorized
-		search_tweets('$TD')
-		sort_tweets_for_the_past_number_of_days(1)
+		search_tweets("$TD")
+		@tweets = Tweet.sort_tweets_for_the_past_number_of_days("$TD", 1)
+		@tweet_count = Tweet.total_tweets_3days("$TD")
 	end
 
 private	
@@ -22,6 +23,7 @@ private
 			unless Tweet.exists?(['tweet_created_at = ? AND user_id = ?', tweet.created_at, tweet.user.id])
 				@tweet = Tweet.new
 				@tweet.update_attributes(
+					:ticker => (ticker),
 					:text => tweet.text, 
 					:username => tweet.user.screen_name, 
 					:user_id => tweet.user.id,
@@ -33,8 +35,6 @@ private
 		end
 	end
 
-	def sort_tweets_for_the_past_number_of_days(days)
-		@tweets = Tweet.where(:tweet_created_at => (days).day.ago..Time.now).order(:tweet_created_at).reverse_order   
-	end
+
 
 end
