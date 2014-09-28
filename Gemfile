@@ -37,7 +37,10 @@ gem 'twitter'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+gem 'pry'
 
 gem 'hirb'
 
 gem 'nas-yahoo_stock'
+
+gem 'whenever', :require => false

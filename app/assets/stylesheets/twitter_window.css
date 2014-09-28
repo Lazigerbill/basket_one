@@ -7,6 +7,10 @@
 	margin: 10px;
 }
 
+li{
+	list-style-type: none;
+}
+
 .tweet{
 	background-color: rgba(0, 0, 0, 0.8);
 	color: white;

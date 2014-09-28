@@ -28,7 +28,7 @@ class Tweet < ActiveRecord::Base
 					:profile_img_url => tweet.user.profile_image_url.to_s,
 					:retweet_count => tweet.retweet_count,
 					:tweet_created_at => tweet.created_at
-				)
+					)
 			end
 		end
 	end
