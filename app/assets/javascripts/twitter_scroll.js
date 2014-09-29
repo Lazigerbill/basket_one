@@ -1,7 +1,7 @@
 $(document).ready(function() {
 	$('.tweet_list').newsTicker({
-		row_height: 100,
-		max_rows: 2,
+		row_height: 77,
+		max_rows: 3,
 		speed: 600,
 		direction: 'up',
 		duration: 4000,

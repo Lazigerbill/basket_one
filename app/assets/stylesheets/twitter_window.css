@@ -7,30 +7,28 @@
 	margin: 10px;
 }
 
-li{
-	list-style-type: none;
-}
-
-.profile_pic{
-	/*	float: left;*/
-	display: inline-block; 
-}
-
 .tweet{
+	list-style-type: none;
 	background-color: rgba(0, 0, 0, 0.8);
 	color: white;
 	border: 1px solid black;
 	border-radius: 10px;
-/*	overflow: hidden;*/
+	overflow: hidden;
 	margin: 5px;
-/*	width: 300px;*/
+}
+
+.profile_pic{
+	display: inline-block; 
+	float: left;
+	height: 70px;
 }
 
 
+
 .tweet_content{
-	width: 550px !important;
-	display: inline-block;
-/*	float: right;*/
+	margin: 5px;
+	word-wrap: break-word;
+
 
 }
 
