@@ -21,13 +21,13 @@ function show_news(url){
 
 $('#headline').ready(function() {
   $('.newsticker').newsTicker({
-    row_height: 20,
-    max_rows: 2,
+    row_height: 30,
+    max_rows: 1,
     speed: 600,
     direction: 'down',
     duration: 4000,
     autostart: 1,
-    pauseOnHover: 0
+    pauseOnHover: 1
   });
 }) 
 

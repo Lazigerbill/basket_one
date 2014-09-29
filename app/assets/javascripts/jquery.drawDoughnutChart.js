@@ -195,13 +195,12 @@
         startRadius += segmentAngle;
       }
     }
-    // *******Bill's code below to get completetion%*****
-    var fund_completetion = parseInt($('#fund_completetion').text())
+
     function drawDoughnutText(animationDecimal, segmentTotal){
       $summaryNumber
         .css({opacity: animationDecimal})
         // ****Bill's code*****
-        .text((fund_completetion * animationDecimal).toFixed(1)+"%");
+        .text((80 * animationDecimal).toFixed(1)+"%");
         // ****original text******
         // .text((segmentTotal * animationDecimal).toFixed(1));
     }
