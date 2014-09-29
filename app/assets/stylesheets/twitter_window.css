@@ -11,22 +11,26 @@ li{
 	list-style-type: none;
 }
 
+.profile_pic{
+	/*	float: left;*/
+	display: inline-block; 
+}
+
 .tweet{
 	background-color: rgba(0, 0, 0, 0.8);
 	color: white;
 	border: 1px solid black;
 	border-radius: 10px;
-	overflow: hidden;
+/*	overflow: hidden;*/
 	margin: 5px;
-	width: 40%;
+/*	width: 300px;*/
 }
 
-.profile_pic{
-	float: left;
-}
 
 .tweet_content{
-
+	width: 550px !important;
+	display: inline-block;
+/*	float: right;*/
 
 }
 

@@ -35,17 +35,19 @@
 <div class = "twitter_window">
 	<% counter = 0 %>
 	
-	<% @tweets.each do |key, value| %>
-		<div class = "tweet">
-			<div class = "profile_pic"><%= image_tag (key[:profile_img_url]) %> </div>
-			<div class = "tweet_content"> 
-				<%= key[:text] %> <br>
-				by <em><%= key[:username] %></em> <%= key[:tweet_created_at] %> 
-				<div class ="retweets">retweets: <%= key[:retweet_count] %></div> <br>
-			</div>
-			<% counter += 1 %>
-		</div>
-	<% end %>
+	<ul class = "tweet_list">
+		<% @tweets.each do |key, value| %>
+			<li class = "tweet">
+				<div class = "profile_pic"><%= image_tag (key[:profile_img_url]) %> </div>
+				<div class = "tweet_content"> 
+					<%= key[:text] %> <br>
+					by <em><%= key[:username] %></em> <%= key[:tweet_created_at] %> 
+					<span class ="retweets">retweets: <%= key[:retweet_count] %></span> <br>
+				</div>
+				<% counter += 1 %>
+			</li>
+		<% end %>
+	</ul>
 
 
 	There are <%= counter %> tweets!
