@@ -15,7 +15,7 @@ function load_fundamentals(url){
   
 $(document).on('ready page:load', function(){
 
-// 1st chart ***ROE***
+// 1st chart ***PEG***
 $("#PEGChart").drawDoughnutChart([
   { 
     title: ticker,
@@ -35,7 +35,7 @@ $("#PEGChart").drawDoughnutChart([
 ], "PEG");
 
 
-// 2nd chart ***EPS***
+// 2nd chart ***PE***
 $("#PEChart").drawDoughnutChart([
   { 
     title: ticker,
@@ -53,7 +53,25 @@ $("#PEChart").drawDoughnutChart([
     color: "#FF0000" 
   },
 ], "PE");
-  
+
+// 3nd chart ***Growth Est***
+$("#PEChart").drawDoughnutChart([
+  { 
+    title: ticker,
+    value: this_pe,  
+    color: "#0000FF" 
+  },
+  { 
+    title: "Industry",
+    value: industry_pe,   
+    color: "#00FF00" 
+  },
+  { 
+    title: "S&P500",
+    value: sp_pe,   
+    color: "#FF0000" 
+  },
+], "PE");  
 });
 
 

@@ -41,6 +41,6 @@ gem 'pry'
 
 gem 'hirb'
 
-gem 'nas-yahoo_stock'
+gem 'jquery-ui-rails'
 
 gem 'whenever', :require => false
