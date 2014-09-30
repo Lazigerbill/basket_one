@@ -35,8 +35,7 @@
         tipOffsetY: -45,
         tipClass: "doughnutTip",
         summaryClass: "doughnutSummary",
-        // ***Bill need to make the below a variable***
-        summaryTitle: "doughnutTitle:",
+        summaryTitle: options,
         summaryTitleClass: "doughnutSummaryTitle",
         summaryNumberClass: "doughnutSummaryNumber",
         beforeDraw: function(){  },
@@ -71,7 +70,8 @@
       easingFunction = animationOptions[settings.animationEasing],
       doughnutRadius = Min([H/2,W/2]) - settings.edgeOffset,
       cutoutRadius = doughnutRadius * (settings.percentageInnerCutout/100),
-      segmentTotal = 0;
+      segmentTotal = 0,
+      subjectValue = 0;
 
     //Draw base doughnut
     var baseDoughnutRadius = doughnutRadius + settings.baseOffset,
@@ -127,6 +127,7 @@
 
     for (var i = 0, len = data.length; i < len; i++){
       segmentTotal += data[i].value;
+      subjectValue = data[0].value;
       var p = document.createElementNS('http://www.w3.org/2000/svg', 'path');
       p.setAttribute("stroke-width", settings.segmentStrokeWidth);
       p.setAttribute("stroke", settings.segmentStrokeColor);
@@ -146,7 +147,7 @@
     function pathMouseEnter(e){
       var order = $(this).data().order;
       // ******Bill added $$$$ sign*****
-      $tip.text(data[order].title + ": $" + data[order].value)
+      $tip.text(data[order].title + ": " + data[order].value)
         .fadeIn(200);
       settings.onPathEnter.apply($(this),[e,data]);
     }
@@ -200,7 +201,7 @@
       $summaryNumber
         .css({opacity: animationDecimal})
         // ****Bill's code*****
-        .text((80 * animationDecimal).toFixed(1)+"%");
+        .text((subjectValue * animationDecimal).toFixed(1));
         // ****original text******
         // .text((segmentTotal * animationDecimal).toFixed(1));
     }

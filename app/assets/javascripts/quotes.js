@@ -18,13 +18,13 @@ function show_quote(url){
 }  
 
 $('ticker_window').ready(function(){
-	if(parseFloat($('#change').text())>=0){
-		$('#last_trade').before("<img id=\"tick_arrow\" src=\"/assets/uptick.gif\">");
-		$('#change').css({"color":"green"});
-	} else {
-		$('#last_trade').before("<img id=\"tick_arrow\" src=\"/assets/downtick.gif\">");
-		$('#change').css({"color":"red"});
-	}
+  if(parseFloat($('#change').text())>=0){
+    $('#last_trade').before("<img id=\"tick_arrow\" src=\"/assets/uptick.gif\">");
+    $('#change').css({"color":"green"});
+  } else {
+    $('#last_trade').before("<img id=\"tick_arrow\" src=\"/assets/downtick.gif\">");
+    $('#change').css({"color":"red"});
+  }
 })
 
 
