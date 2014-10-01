@@ -2,7 +2,7 @@ class IndexController < ApplicationController
 	def index
 
 		ticker = "$TD"
-		@quote_ticker = "GOOG"
+		@quote_ticker = "MSFT"
 		@tweets = Tweet.sort_tweets_for_the_past_number_of_days(ticker, 7)
 		@tweet_count = Tweet.count_total_tweets(ticker, 7)
 

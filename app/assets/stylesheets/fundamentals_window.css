@@ -16,3 +16,15 @@
 	height: 100%;
 	color: white;
 }
+
+#PEGChart{
+	display: inline-block;
+}
+
+#PEChart{
+	display: inline-block;
+}
+
+#growth_est{
+	display: inline-block;
+}

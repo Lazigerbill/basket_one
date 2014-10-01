@@ -4,13 +4,16 @@
   <title>Final</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag '//code.jquery.com/ui/1.11.1/jquery-ui.js' %>
+  <%= javascript_include_tag 'http://code.jquery.com/ui/1.11.1/jquery-ui.js' %>
+  <%= javascript_include_tag 'http://code.highcharts.com/stock/highstock.js' %>
+  <%= javascript_include_tag 'http://code.highcharts.com/stock/modules/exporting.js' %>
   <%= csrf_meta_tags %>
-
 </head>
 <body>
 
 <%= yield %>
+
+
 
   
 </body>
