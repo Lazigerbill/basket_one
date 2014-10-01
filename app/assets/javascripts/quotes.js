@@ -13,7 +13,7 @@ function show_quote(url){
   var pre_close = Math.round((parseFloat(quote.LastTradePriceOnly) - parseFloat(quote.Change))*100)/100;
 
   $('#company').text(name);
-  $('#last_trade').text(lasttrade);
+  $('#last_trade').text(lasttrade.toFixed(2));
   $('#change').text(change);
   $('#pre_close').text(pre_close);
   $('#range').text(range);

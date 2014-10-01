@@ -126,7 +126,7 @@
     var $summaryNumber = $('<p class="' + settings.summaryNumberClass + '"></p>').appendTo($summary).css({opacity: 0});
 
     for (var i = 0, len = data.length; i < len; i++){
-      segmentTotal += data[i].value;
+      segmentTotal += Math.abs(data[i].value);
       subjectValue = data[0].value;
       var p = document.createElementNS('http://www.w3.org/2000/svg', 'path');
       p.setAttribute("stroke-width", settings.segmentStrokeWidth);
@@ -174,7 +174,7 @@
 
       //draw each path
       for (var i = 0, len = data.length; i < len; i++){
-        var segmentAngle = rotateAnimation * ((data[i].value/segmentTotal) * (PI*2)),
+        var segmentAngle = rotateAnimation * ((Math.abs(data[i].value)/segmentTotal) * (PI*2)),
           endRadius = startRadius + segmentAngle,
           largeArc = ((endRadius - startRadius) % (PI * 2)) > PI ? 1 : 0,
           startX = centerX + cos(startRadius) * doughnutRadius,
@@ -201,7 +201,7 @@
       $summaryNumber
         .css({opacity: animationDecimal})
         // ****Bill's code*****
-        .text((subjectValue * animationDecimal).toFixed(1));
+        .text((subjectValue * animationDecimal).toFixed(2));
         // ****original text******
         // .text((segmentTotal * animationDecimal).toFixed(1));
     }

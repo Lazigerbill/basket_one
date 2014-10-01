@@ -9,6 +9,7 @@
 
 .tweet{
 	list-style-type: none;
+	height: 72px;
 	background-color: rgba(0, 0, 0, 0.8);
 	color: white;
 	border: 1px solid black;
@@ -28,10 +29,23 @@
 .tweet_content{
 	margin: 5px;
 	word-wrap: break-word;
-
-
 }
 
-.retweets{
+.tweet_info{
+}
+
+.timeago{
 	float: right;
+	border: 1px solid white !important;
+	padding: 2px;
+	border-radius: 3px;
+	background-color: white;
+	color: black;
+}
+
+.tweet_counts{
+	border: 1px solid white;
+	background-color: white;
+	border-radius: 5px;
+	font-size: 20px;
 }

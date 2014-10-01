@@ -50,6 +50,11 @@ $(document).on('ready page:load', function(){
 	    		text : qticker + ' Stock Price'
 	    	},
 
+	    	rangeSelector: {
+	    	    enabled: true,
+	    	    inputEnabled: false
+	    	},
+
 	    	navigator : {
 	    	                enabled : false
 	    	            },
@@ -74,6 +79,7 @@ $(document).on('ready page:load', function(){
 	    			[1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
 	    			]
 	    		}
+	    		
 	    	}]
 
 		});    

@@ -4,8 +4,22 @@ class Tweet < ActiveRecord::Base
 		self.where({ticker: (ticker), tweet_created_at: (days).day.ago..Time.now}).count
 	end
 
+	def self.tweet_count_array(ticker)
+		[
+		self.where({ticker: (ticker), tweet_created_at: 10.day.ago..9.day.ago}).count,
+		self.where({ticker: (ticker), tweet_created_at: 9.day.ago..8.day.ago}).count,
+		self.where({ticker: (ticker), tweet_created_at: 8.day.ago..7.day.ago}).count,
+		self.where({ticker: (ticker), tweet_created_at: 7.day.ago..6.day.ago}).count,
+		self.where({ticker: (ticker), tweet_created_at: 6.day.ago..5.day.ago}).count,
+		self.where({ticker: (ticker), tweet_created_at: 5.day.ago..4.day.ago}).count,
+		self.where({ticker: (ticker), tweet_created_at: 4.day.ago..3.day.ago}).count,
+		self.where({ticker: (ticker), tweet_created_at: 3.day.ago..2.day.ago}).count,
+		self.where({ticker: (ticker), tweet_created_at: 2.day.ago..1.day.ago}).count,
+		self.where({ticker: (ticker), tweet_created_at: 1.day.ago..Time.now}).count
+		]
+	end
 	def self.sort_tweets_for_the_past_number_of_days(ticker, days)
-		self.where({ticker: (ticker), tweet_created_at: (days).day.ago..Time.now}).order(:tweet_created_at).reverse_order   
+		self.where({ticker: (ticker), tweet_created_at: (days).day.ago..Time.now}).order(:tweet_created_at).reverse_order.limit(10)   
 	end
 
 	def self.get_authorized		

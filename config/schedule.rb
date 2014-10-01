@@ -10,7 +10,7 @@ set :output, "#{path}/log/cron.log"
 # set :environment, :development
 
 
-every 15.minutes do
+every 30.minutes do
   rake "twitter:download_tweets"
 end
 #

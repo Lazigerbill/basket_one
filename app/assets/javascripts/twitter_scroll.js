@@ -1,6 +1,6 @@
 $(document).ready(function() {
 	$('.tweet_list').newsTicker({
-		row_height: 77,
+		row_height: 79,
 		max_rows: 3,
 		speed: 600,
 		direction: 'up',
@@ -8,4 +8,11 @@ $(document).ready(function() {
 		autostart: 1,
 		pauseOnHover: 1
 	});
+
+	$('#sparkline').sparkline(tweet_count, {
+    	type: "bar",
+    	tooltipSuffix: " tweets"
+	});
 })
+
+
