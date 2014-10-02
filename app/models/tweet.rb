@@ -19,7 +19,7 @@ class Tweet < ActiveRecord::Base
 		]
 	end
 	def self.sort_tweets_for_the_past_number_of_days(ticker, days)
-		self.where({ticker: (ticker), tweet_created_at: (days).day.ago..Time.now}).order(:tweet_created_at).reverse_order.limit(10)   
+		self.where({ticker: (ticker), tweet_created_at: (days).day.ago..Time.now}).order(:tweet_created_at).reverse_order.limit(9)   
 	end
 
 	def self.get_authorized		

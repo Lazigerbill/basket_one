@@ -49,6 +49,7 @@ $(document).on('ready page:load', function(){
 	    	title : {
 	    		text : qticker + ' Stock Price'
 	    	},
+	    	
 
 	    	rangeSelector: {
 	    	    enabled: true,
@@ -67,6 +68,7 @@ $(document).on('ready page:load', function(){
 	    		tooltip : {
 	    			valueDecimals : 2
 	    		},
+
 	    		fillColor : {
 	    			linearGradient : {
 	    				x1: 0,

@@ -44,3 +44,5 @@ gem 'hirb'
 gem 'jquery-ui-rails'
 
 gem 'whenever', :require => false
+
+gem 'sorcery'

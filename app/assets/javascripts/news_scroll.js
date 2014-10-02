@@ -7,7 +7,7 @@ function show_news(url){
   var headline = [];  
   var output = " "
   var no_items=items.length;  
-  for(var i=0;i<no_items;i++){  
+  for(var i=0;i<(no_items/2);i++){  
     var title = items[i].title;  
     var link = items[i].link;   
     headline[i] = "<li id=\"headline\"><a href='" + link + "'>"+title+"</a></li>";  
