@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  yahoo_symbol: MyString
+  : MyString
+  twitter_symbol: MyString
+  : MyString
+  company_name: MyString
+  : MyString
+
+two:
+  yahoo_symbol: MyString
+  : MyString
+  twitter_symbol: MyString
+  : MyString
+  company_name: MyString
+  : MyString

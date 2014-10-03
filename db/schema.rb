@@ -11,12 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141003012109) do
+ActiveRecord::Schema.define(version: 20141003221950) do
 
   create_table "authentications", force: true do |t|
     t.integer  "user_id",    null: false
     t.string   "provider",   null: false
     t.string   "uid",        null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "stocks", force: true do |t|
+    t.string   "yahoo_symbol"
+    t.string   "twitter_symbol"
+    t.string   "company_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "stocks_users", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "stock_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

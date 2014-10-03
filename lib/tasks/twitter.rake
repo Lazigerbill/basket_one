@@ -8,6 +8,7 @@ namespace :twitter do
 		Tweet.download_tweets(client, "$RY")
 		Tweet.download_tweets(client, "$CM")
 		Tweet.download_tweets(client, "$BNS")
+		Tweet.download_tweets(client, "$YHOO")
   	end
 
 end

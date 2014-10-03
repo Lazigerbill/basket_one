@@ -18,7 +18,7 @@
 			<img class = "logo" src="http://logonoid.com/images/td-bank-logo.png" alt=""></img>
 		<div id = "company">
 		</div><br>
-			<div id = "tick"></div>
+			<!-- <div id = "tick"></div> -->
 			<div id = "last_trade"></div>
 			<div id = "change"></div>
 		
@@ -66,11 +66,12 @@
 			<div class = "tweet_info">					
 				by <em><%= @most_retweeted[:username] %></em> 
 				Retweeted: <span><%= @most_retweeted[:retweet_count] %></span> times
-				<div class="timeago"><%= time_ago_in_words(@most_retweeted[:tweet_created_at]) %> ago</div> 
+				<div class="timeago"><%= time_ago_in_words(@most_retweeted[:tweet_created_at]) %> ago</div>
+				<a href="https://twitter.com/intent/retweet">retweet</a> 
 			</div>
 		</div>
 	</div>
-	<div class = "tweet_counts">There are <span id="sparkline">&nbsp;</span> tweets!</div>
+	<div class = "tweet_counts">There are <span id="sparkline">&nbsp;</span> tweets!<%= image_tag('https://g.twimg.com/dev/sites/default/files/images_documentation/bird_blue_32.png') %></div>
 </div>
 
 <%= javascript_tag do %>

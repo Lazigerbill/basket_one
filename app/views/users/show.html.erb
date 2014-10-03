@@ -1,19 +1,20 @@
-<p id="notice"><%= notice %></p>
+
 
 <p>
-  <strong>Email:</strong>
-  <%= @user.email %>
+  Welcome back, <%= @user.email %>!
 </p>
 
-<p>
-  <strong>Crypted password:</strong>
-  <%= @user.crypted_password %>
-</p>
+<h2>My favorite 3 stocks:</h2>
 
-<p>
-  <strong>Salt:</strong>
-  <%= @user.salt %>
-</p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%= link_to 'Dashboard', root_url %>
+
+
+
+<!-- Game profile here -->
+<!-- active since -->
+<!-- points -->
+<!-- I have all my eggs in ?? -->
+<!-- type of investor -->
+<!-- newb, active, churner, buy-and-hold -->

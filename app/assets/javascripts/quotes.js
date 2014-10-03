@@ -22,10 +22,10 @@ function show_quote(url){
 // to change color and direction of ticker arrow, depending on 'change'
 $('ticker_window').ready(function(){
   if(parseFloat($('#change').text())>=0){
-    $('#tick').html("<img id=\"tick_arrow\" src=\"/assets/uptick.gif\">");
+    $('#last_trade').before("<img id=\"tick_arrow\" src=\"/assets/uptick.gif\">");
     $('#change').css({"color":"green"});
   } else {
-    $('#tick').html("<img id=\"tick_arrow\" src=\"/assets/downtick.gif\">");
+    $('#last_trade').before("<img id=\"tick_arrow\" src=\"/assets/downtick.gif\">");
     $('#change').css({"color":"red"});
   }
 });
