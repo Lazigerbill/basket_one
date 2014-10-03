@@ -3,9 +3,6 @@ Rails.application.routes.draw do
 post "oauth/callback" => "oauths#callback"
 get "oauth/callback" => "oauths#callback" # for use with Github, Facebook
 get "oauth/:provider" => "oauths#oauth", :as => :auth_at_provider
-  get 'oauths/oauth'
-
-  get 'oauths/callback'
 
 root :to => 'users#index'
 resources :user_sessions

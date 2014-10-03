@@ -23,6 +23,6 @@ end
 end
 private
 def auth_params
-	params.permit(:code, :provider, :user_id, :uid)
+	params.permit(:code, :provider, :user_id, :uid, :oauth_token, :oauth_verifier)
 end
 end

@@ -18,7 +18,7 @@
 		<% else %>
 		<%= link_to "Register", new_user_path %> |
 		<%= link_to "Login", :login %> or 
-		<%= link_to 'Login with Twitter', auth_at_provider_path(:provider => :twitter) %>
+		<%= link_to image_tag('https://g.twimg.com/dev/sites/default/files/images_documentation/sign-in-with-twitter-gray.png'), auth_at_provider_path(:provider => :twitter) %>
 		<% end %>
 	</div>
 	<div>
