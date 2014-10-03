@@ -1,21 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Final</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'http://code.jquery.com/ui/1.11.1/jquery-ui.js' %>
-  <%= javascript_include_tag 'http://code.highcharts.com/stock/highstock.js' %>
-  <%= javascript_include_tag 'http://code.highcharts.com/stock/modules/exporting.js' %>
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
-  <%= csrf_meta_tags %>
+	<title>Final</title>
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	<%= javascript_include_tag 'http://code.jquery.com/ui/1.11.1/jquery-ui.js' %>
+	<%= javascript_include_tag 'http://code.highcharts.com/stock/highstock.js' %>
+	<%= javascript_include_tag 'http://code.highcharts.com/stock/modules/exporting.js' %>
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
+	<%= csrf_meta_tags %>
 </head>
 <body>
+	<div id="nav">
+		<% if current_user %>
+		<%= link_to "Edit Profile", edit_user_path(current_user.id) %>
+		<%= link_to "Logout", :logout, method: :post %>
+		<% else %>
+		<%= link_to "Register", new_user_path %> |
+		<%= link_to "Login", :login %>
+		<% end %>
+	</div>
+	<div>
+		<p id="notice"><%= flash[:notice] %></p>
+		<p id="alert"><%= flash[:alert] %></p>
+	</div>
+	
+	<%= yield %>
 
-<%= yield %>
 
 
 
-  
 </body>
 </html>

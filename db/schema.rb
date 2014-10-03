@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141002164436) do
+ActiveRecord::Schema.define(version: 20141003005309) do
+
+  create_table "authentications", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "provider",   limit: 255
+    t.integer  "uid",        limit: 255
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "tweets", force: true do |t|
     t.string   "username"
@@ -27,8 +35,8 @@ ActiveRecord::Schema.define(version: 20141002164436) do
 
   create_table "users", force: true do |t|
     t.string   "email",            null: false
-    t.string   "crypted_password", null: false
-    t.string   "salt",             null: false
+    t.string   "crypted_password"
+    t.string   "salt"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
