@@ -22,21 +22,26 @@
 <% if @results %>
 	<%= form_tag user_stocks_path(@user), :method => "post" do %>
 	<table>
+		<th> Selections </th>	
+		<th> Symbol </th>
+		<th> Name </th>
+		<th> Exchange </th>
 		<% @results.each do |result| %>
-		<tr>	
+		<tr>
 			<td>
-				<%= radio_button_tag 'index', result["symbol"] %> 
-				<%= label_tag 'index', result["symbol"] %> 
-				<%= hidden_field_tag :company_name, result["name"] %>
-				<%= hidden_field_tag :twitter_symbol, "$" + result["symbol"] %>
+			 <%= radio_button_tag :stock_lookup, "#{result['symbol']},#{result['name']}" %> 
 			</td>
 
 			<td>
-				<%= label_tag 'index',  result["name"] %>
+				<%= label_tag :stock_lookup, result["symbol"] %> 
+			</td>
+
+			<td>
+				<%= label_tag :stock_lookup,  result["name"] %>
 			</td>
 
 			<td>		
-				<%= label_tag 'index',  result["exchDisp"] %>
+				<%= label_tag :stock_lookup,  result["exchDisp"] %>
 			</td>								
 		</tr>
 		<% end %>

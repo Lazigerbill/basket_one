@@ -10,6 +10,6 @@
 	Stock.create(yahoo_symbol: 'MSFT', twitter_symbol: '$MSFT', company_name: 'Microsoft Corporation')
 	Stock.create(yahoo_symbol: 'CSCO', twitter_symbol: '$CSCO', company_name: 'Cisco Systems, Inc.')
 
-	Stocks_user.create(user_id: 3, stock_id: 1)
-	Stocks_user.create(user_id: 3, stock_id: 2)
-	Stocks_user.create(user_id: 3, stock_id: 3)
+	# Stocks_user.create(user_id: 3, stock_id: 1)
+	# Stocks_user.create(user_id: 3, stock_id: 2)
+	# Stocks_user.create(user_id: 3, stock_id: 3)
