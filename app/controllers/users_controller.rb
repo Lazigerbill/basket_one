@@ -21,6 +21,10 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+    @stocks = @user.stocks.all
+
+    ticker_lookup(params[:search])
+
   end
 
   # POST /users
@@ -72,6 +76,21 @@ class UsersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
       params.require(:user).permit(:code, :provider, :user_id, :uid, :email, :crypted_password, :salt, :password, :password_confirmation, :authentications_attributes)
+    end
+
+    def ticker_lookup(search)
+      url = 'http://d.yimg.com/autoc.finance.yahoo.com/autoc?query=' + search + '&callback=YAHOO.Finance.SymbolSuggest.ssCallback'
+      response = HTTParty.get(url)
+      response_adj = response.body[39..-2]
+      array = JSON.parse(response_adj)
+      @results = array['ResultSet']['Result']
+      # i=0
+      # while i<results.length
+      #   puts results[i]["symbol"]   
+      #   puts results[i]["name"]
+      #   puts results[i]["exchDisp"]
+      #   i = 1+i
+      # end
     end
 end
 

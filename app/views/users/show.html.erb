@@ -6,10 +6,26 @@
 
 <h2>My favorite 3 stocks:</h2>
 
+<ul>
+	<% @user.stocks.each do |stock| %>
+		<li><%= stock.company_name %></li>
+<% end %>
+</ul>
+
+
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Dashboard', root_url %>
 
+
+<aside>
+	<h2>Account Information</h2>
+	<p>username</p>
+	<p>member since</p>
+	<p>investor type</p>
+	<p>sign out button</p>
+
+</aside>
 
 
 <!-- Game profile here -->
