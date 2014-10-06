@@ -10,8 +10,8 @@ $(document).ready(function() {
 	});
 
 	$('#sparkline').sparkline(tweet_count, {
-    	type: "bar",
-    	tooltipSuffix: " tweets"
+		type: "bar",
+		tooltipSuffix: " tweets"
 	});
 })
 

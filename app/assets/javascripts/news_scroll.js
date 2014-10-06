@@ -1,5 +1,5 @@
-  // Parses returned response and extracts  
-//     // the title, links, and text of each news story.  
+// Parses returned response and extracts  
+// the title, links, and text of each news story.  
 
 
 function show_news(url){  

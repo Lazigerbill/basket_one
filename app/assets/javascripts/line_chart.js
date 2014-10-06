@@ -2,16 +2,16 @@ var his_array
 function load_data(historical_data){
 	var quoteData = [];
 	$.each(historical_data.query.results.quote, function(index, value) {
-	    var theTime = value.Date;
-	    var milliTime = new Date(theTime);
-	    milliTime = milliTime.getTime();
-	    
-	    var results = [milliTime, parseFloat(value.Adj_Close)];
+		var theTime = value.Date;
+		var milliTime = new Date(theTime);
+		milliTime = milliTime.getTime();
+		
+		var results = [milliTime, parseFloat(value.Adj_Close)];
 
-	    quoteData.push(results);
+		quoteData.push(results);
 	});
-	    his_array = quoteData.reverse();
-    
+	his_array = quoteData.reverse();
+	
 }
 
 $(document).on('ready page:load', function(){
@@ -21,13 +21,13 @@ $(document).on('ready page:load', function(){
 	var mm = now.getMonth()+1;    
 	var yyyy = now.getFullYear();
 	if(dd<10){
-        dd='0'+dd
-    } 
-    if(mm<10){
-        mm='0'+mm
-    } 
-    var end_date = yyyy + "-" + mm + "-" + dd;
-    var start_date = (yyyy-1) + "-" + mm + "-" + dd;
+		dd='0'+dd
+	} 
+	if(mm<10){
+		mm='0'+mm
+	} 
+	var end_date = yyyy + "-" + mm + "-" + dd;
+	var start_date = (yyyy-1) + "-" + mm + "-" + dd;
 
 
 	//parsing YQL query
@@ -39,53 +39,53 @@ $(document).on('ready page:load', function(){
 	$.getScript(historical_url).done(function (){
 
 	// Create the chart
-	    $('#container').highcharts('StockChart', {
+	$('#container').highcharts('StockChart', {
 
 
-	    	rangeSelector : {
-	    		selected : 1
-	    	},
+		rangeSelector : {
+			selected : 1
+		},
 
-	    	title : {
-	    		text : qticker + ' Stock Price'
-	    	},
-	    	
+		title : {
+			text : qticker + ' Stock Price'
+		},
+		
 
-	    	rangeSelector: {
-	    	    enabled: true,
-	    	    inputEnabled: false
-	    	},
+		rangeSelector: {
+			enabled: true,
+			inputEnabled: false
+		},
 
-	    	navigator : {
-	    	                enabled : false
-	    	            },
+		navigator : {
+			enabled : false
+		},
 
-	    	series : [{
-	    		name : qticker + ' Stock Price',
-	    		data : his_array,
-	    		type : 'area',
-	    		threshold : null,
-	    		tooltip : {
-	    			valueDecimals : 2
-	    		},
+		series : [{
+			name : qticker + ' Stock Price',
+			data : his_array,
+			type : 'area',
+			threshold : null,
+			tooltip : {
+				valueDecimals : 2
+			},
 
-	    		fillColor : {
-	    			linearGradient : {
-	    				x1: 0,
-	    				y1: 0,
-	    				x2: 0,
-	    				y2: 1
-	    			},
-	    			stops : [
-	    			[0, Highcharts.getOptions().colors[0]],
-	    			[1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
-	    			]
-	    		}
-	    		
-	    	}]
+			fillColor : {
+				linearGradient : {
+					x1: 0,
+					y1: 0,
+					x2: 0,
+					y2: 1
+				},
+				stops : [
+				[0, Highcharts.getOptions().colors[0]],
+				[1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
+				]
+			}
+			
+		}]
 
-		});    
-	});
+	});    
+});
 });
 
 

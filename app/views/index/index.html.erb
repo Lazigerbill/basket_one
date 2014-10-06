@@ -1,4 +1,9 @@
 <!-- This is the news part -->
+<%= form_tag "index", :method => "post" do %>
+<%= select_tag(:ticker, options_for_select(@stocks)) %>
+<%= submit_tag 'GO!' %>
+<% end %>
+
 
 <div class = "topbar">
 	<div class = "news_window">
