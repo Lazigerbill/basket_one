@@ -25,6 +25,19 @@
 		<p id="alert"><%= flash[:alert] %></p>
 	</div>
 	
+	<%= javascript_tag do %>
+		<% if @tweet_array.present? %>
+			window.tweet_count = <%= @tweet_array %>;
+		<% else %>
+			window.tweet_count = 0;
+		<% end %>
+		<% if @quote_ticker.present? %>
+			window.qticker = "<%= @quote_ticker %>";
+		<% else %>
+			window.qticker = "TD";
+		<% end %>
+	<% end %>
+	
 	<%= yield %>
 
 

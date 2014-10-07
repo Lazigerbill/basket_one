@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$('twitter_window').ready(function() {
 	$('.tweet_list').newsTicker({
 		row_height: 79,
 		max_rows: 3,

@@ -8,7 +8,7 @@ post 'logout' => 'user_sessions#destroy', :as => :logout
 
 
 root :to => 'index#index'
-post "index" => "index#load"
+
 
 resources :user_sessions
 resources :users do 

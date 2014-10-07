@@ -32,7 +32,7 @@ class Tweet < ActiveRecord::Base
 	end
 
 	def self.download_tweets(client, ticker)
-		client.search((ticker), :result_type => "mixed", :limit => 100).each do |tweet|
+		client.search((ticker), :result_type => "mixed", :count => 5).each do |tweet|
 			unless Tweet.exists?(['tweet_created_at = ? AND user_id = ?', tweet.created_at, tweet.user.id])
 				Tweet.create(
 					:ticker => (ticker),

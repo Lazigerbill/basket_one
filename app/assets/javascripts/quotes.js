@@ -22,10 +22,10 @@ function show_quote(url){
 // to change color and direction of ticker arrow, depending on 'change'
 $('ticker_window').ready(function(){
   if(parseFloat($('#change').text())>=0){
-    $('#last_trade').before("<img id=\"tick_arrow\" src=\"/assets/uptick.gif\">");
+    $('#tick').html("<img id=\"tick_arrow\" src=\"/assets/uptick.gif\">");
     $('#change').css({"color":"green"});
   } else {
-    $('#last_trade').before("<img id=\"tick_arrow\" src=\"/assets/downtick.gif\">");
+    $('#tick').html("<img id=\"tick_arrow\" src=\"/assets/downtick.gif\">");
     $('#change').css({"color":"red"});
   }
 });
@@ -37,5 +37,5 @@ setInterval(function(){
   $('#change').effect("highlight");
   var url1 = 'https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.quote%20where%20symbol%20in%20(%22'+qticker+'%22)&format=json&diagnostics=true&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback=show_quote'
   $.getScript(url1)
-}, 60000);
+}, 30000);
 
