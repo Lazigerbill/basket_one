@@ -1,9 +1,33 @@
-<h1>My basket</h1>
+<!-- Hero -->
+<!-- <div class="wrapper-for-content-outside-of-footer"> -->
+	<div class="hero">
+		<div>
+			<p class="flash-notice"><%= flash[:notice] %></p>
+			<p class="flash-alert"><%= flash[:alert] %></p>
+		</div>
+		<div class="hero-inner">
+			<a href="" class="hero-logo"><%= image_tag("logo_white.gif", :alt => "Logo image") %></a>
+			<div class="hero-copy">
+				<h1>Basket. One.</h1>
+				<p>This apps provides novice investors an overiew of a stock and let them share their experiences within the Twitter community.</p>
+			</div>
+			<button><%= image_tag "bird_blue_med.png" %> <%= link_to 'Sign in with Twitter', auth_at_provider_path(:provider => :twitter) %></button>
+		</div>
+	</div>
 
-<p>Put all your eggs in the one basket and --- WATCH THAT BASKET</p>
-<p>Andrew Carnegie</p>
+	<!-- Quote -->
 
+	<div class="comment">
+		<div class="comment-content">
+			<p>"Concentrate your energies, your thoughts and your capital. The wise man puts all his eggs in one basket and watches the basket."</p>
+		</div>
+		<div class="comment-image">
+			<%= image_tag "carnegie.gif" %>
+		</div>
+		<p class="comment-detail">Andrew Carnegie</p>
+	</div>
 
+	<!-- 	<div class="push"></div> -->
 
-
-
+	<!-- Footer -->
+	

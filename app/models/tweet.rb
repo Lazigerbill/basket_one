@@ -1,8 +1,8 @@
 class Tweet < ActiveRecord::Base
 
-	def self.count_total_tweets(ticker, days)
-		self.where({ticker: (ticker), tweet_created_at: (days).day.ago..Time.now}).count
-	end
+	# def self.count_total_tweets(ticker, days)
+	# 	self.where({ticker: (ticker), tweet_created_at: (days).day.ago..Time.now}).count
+	# end
 
 	def self.tweet_count_array(ticker)
 		[

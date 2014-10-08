@@ -4,6 +4,7 @@ class IndexController < ApplicationController
 		@stocks = []
 		@user.stocks.all.each do |stock|
 			@stocks << stock.yahoo_symbol
+			@stocks.sort!
 		end
 
 		@quote_ticker = if params[:ticker].present?

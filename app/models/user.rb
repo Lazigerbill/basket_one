@@ -7,11 +7,11 @@ class User < ActiveRecord::Base
 	has_many :authentications, :dependent => :destroy
 	accepts_nested_attributes_for :authentications
 
-	validates :password, length: { minimum: 3 }
-	validates :password, confirmation: true
-	validates :password_confirmation, presence: true
+	# validates :password, length: { minimum: 3 }
+	# validates :password, confirmation: true
+	# validates :password_confirmation, presence: true
 
-	validates :email, uniqueness: true
+	# validates :email, uniqueness: true
 
 	has_and_belongs_to_many :stocks
 end

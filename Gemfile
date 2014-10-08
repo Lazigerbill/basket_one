@@ -47,5 +47,7 @@ gem 'jquery-ui-rails'
 gem 'whenever', :require => false
 
 gem 'sorcery'
+gem 'bourbon'
+gem 'neat'
 
 gem 'httparty'

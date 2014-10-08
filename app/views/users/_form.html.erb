@@ -1,56 +1,43 @@
-<h2>My favorite 3 stocks:</h2>
-
-<table>
-	<th> Ticker symbol </th>
-	<th> Company </th>
-	<th> Remove </th>
-	<% @user.stocks.each do |stock| %>
-	<tr>
-		<td> <%= stock.yahoo_symbol %> </td>
-		<td> <%= stock.company_name %> </td>
-		<td> <%= link_to 'Remove', stock, method: :delete, data: { confirm: 'Are you sure?' } %> </td>
-	</tr>
-	<% end %>
-</table>
-
-<%= form_tag edit_user_path(@user), method: :get, authentication: false do %>
-<%= label_tag :search, "Symbol lookup:" %>
-<%= text_field_tag :search, nil,  :placeholder => "Company name" %>
-<%= submit_tag "Look up" %>
-<% end %>
 
 <% if @results %>
 <%= form_tag user_stocks_path(@user), :method => "post" do %>
 <% if @results.size >0 %>
-<table>
-	<th> Selections </th>	
-	<th> Symbol </th>
-	<th> Name </th>
-	<th> Exchange </th>
-	<% @results.each do |result| %>
-	<tr>
-		<td>
-			<%= radio_button_tag :stock_lookup, "#{result['symbol']},#{result['name']}" %> 
-		</td>
+<table class="table-borders">
+	<thead>
+	  <tr>
+	  	<th> Selection </th>	
+	  	<th> Ticker Symbol </th>
+	  	<th> Company Name </th>
+	  	<th> Exchange </th>
+	  </tr>
+	</thead>
+	<tbody>
+		<% @results.each do |result| %>
+		<tr>
+			<td class = "table_selection">
+				<%= radio_button_tag :stock_lookup, "#{result['symbol']},#{result['name']}" %> 
+			</td>
 
-		<td>
-			<%= label_tag :stock_lookup, result["symbol"] %> 
-		</td>
+			<td>
+				<%= label_tag :stock_lookup, result["symbol"] %> 
+			</td>
 
-		<td>
-			<%= label_tag :stock_lookup,  result["name"] %>
-		</td>
+			<td>
+				<%= label_tag :stock_lookup,  result["name"] %>
+			</td>
 
-		<td>		
-			<%= label_tag :stock_lookup,  result["exchDisp"] %>
-		</td>								
-	</tr>
-	<% end %>
+			<td>		
+				<%= label_tag :stock_lookup,  result["exchDisp"] %>
+			</td>								
+		</tr>
+		<% end %>
+	</tbody>
 </table>
 
 <%= submit_tag 'Add to favorites' %>
 <% end %>
 <% end %>
 <% end %>
+
 
 

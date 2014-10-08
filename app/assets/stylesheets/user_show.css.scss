@@ -1,0 +1,220 @@
+section.show_user{
+	// @include outer-container;
+}
+
+aside{
+	@include span-columns(4);
+	@include background(url("stock_exchange.jpg"), bottom center no-repeat scroll);
+	// position: absolute;
+	// float: left;
+}
+
+div.my_portfolio{
+	@include span-columns(7);
+}
+
+// Table
+
+.table-borders {
+	$table-border-color: $base-border-color;
+	$table-border: 1px solid $table-border-color;
+	$table-background: lighten($table-border-color, 10);
+	$table-header-color: lighten($table-background, 10);
+	$table-hover-color: darken($table-background, 5);
+	$table-stripe-color: darken($table-background, 4);
+	$table-stripe-color-hover: darken($table-stripe-color, 5);
+	$table-padding: 0.5em;
+
+	border: $table-border;
+	border-left: 0px;
+	border-collapse: separate;
+	border-spacing: 0;
+	border-radius: $base-border-radius;
+
+	tbody {
+		background-color: $table-background;
+		tr:hover > td, tr:hover > th {
+			background-color: $table-hover-color;
+		}
+		tr:nth-child(even) {
+			background-color: $table-stripe-color;
+			&:hover > td {
+				background-color: $table-stripe-color-hover;
+			}
+		}
+	}
+
+	thead:first-of-type {
+		tr:first-child > th:first-child {
+			border-top-left-radius: $base-border-radius;
+		}
+
+		tr:first-child > th:last-child {
+			border-top-right-radius: $base-border-radius;
+		}
+	}
+
+	tbody:last-child {
+		tr:last-child > td:first-child {
+			border-bottom-left-radius: $base-border-radius;
+		}
+
+		tr:last-child > td:last-child {
+			border-bottom-right-radius: $base-border-radius;
+		}
+	}
+
+	thead {
+		th {
+			background-color: $table-header-color;
+			padding: $table-padding;
+			border-left: 1px solid $table-border-color;
+			border-bottom: 0px;
+		}
+	}
+
+	tbody {
+		background-color: $table-background;
+
+		td {
+			padding: $table-padding;
+			border-left: 1px solid $table-border-color;
+			border-top: 1px solid $table-border-color;
+			border-bottom: 0px;
+
+			button {
+				@include button(simple, $table-background);
+				margin-right: 0.5em;
+				display: inline-block;
+				width: 100%;
+				margin-bottom: .3em;
+				outline: none;
+
+				@include media($medium-screen) {
+					width: auto;
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+}
+
+// SIDE IMAGE
+
+$side-image-background-top: #B5EBEB;
+$side-image-background-bottom: #5DAC5D;
+$side-image-border: 1px solid darken(transparentize($side-image-background-bottom, .8), 30);
+
+.side-image {
+	background: #F9F9F9;
+
+	@include media($large-screen) {
+		@include row(table);
+	}
+
+	.images-wrapper {
+		@include background(url('stock_exchange.jpg'), linear-gradient($side-image-background-top, $side-image-background-bottom), no-repeat $side-image-background-top scroll);
+		background-color: $side-image-background-top;
+		border-bottom: $side-image-border;
+		background-size: cover;
+		display: block;
+		min-height: 12em;
+		padding: 3em;
+		color: white;
+		font-weight: bold;
+
+		@include media($large-screen) {
+			@include span-columns(4);
+			background-position: left;
+			background-size: cover;
+			border-right: $side-image-border;
+		}
+		.profile_pic{
+			width: 80px;
+			height: auto;
+			margin: 10px;
+			float: none;
+		}
+	}
+
+	.content {
+		@include span-columns(12);
+		padding: 1em 1em 4em 1em;
+
+		@include media($large-screen) {
+			@include span-columns(8);
+			padding: 4em 4em 8em 4em;
+		}
+	}
+
+	.content h1 {
+		margin-bottom: .9em;
+	}
+
+	.content h4 {
+		background: $side-image-background-bottom;
+		color: white;
+		display: inline-block;
+		font-size: .75em;
+		font-weight: 800;
+		margin-bottom: 1.3em;
+		padding: 3px 8px;
+		text-transform: uppercase;
+	}
+
+	.content p {
+		color: gray;
+		margin-bottom: 3em;
+	}
+
+	.content button {
+		@include button(simple, white);
+		font-size: $base-font-size;
+		outline: none;
+	}
+	@include reset-display();
+}
+
+// To Dashboard Button
+.sign-up {
+	margin-top: 1.5em;
+    // float: right;
+    @include transition (all 0.2s ease-in-out);
+    // display: inline;
+    background: $base-accent-color;
+    border-radius: $base-border-radius; 
+    color: white;
+    font-size: 1.2em;  
+    font-weight: 800;
+    text-transform: uppercase;
+    padding: .6em .8em;
+
+    @include media($large-screen) {
+    	padding: .5em 1em;
+    }
+
+    &:hover {
+    	background: lighten($base-accent-color, 10);
+    }
+}
+
+ // Investor type
+ .investor_type {
+ 	background: green;
+ 	color: white;
+ 	display: inline-block;
+ 	font-size: .7em;
+ 	font-weight: 800;
+ 	margin-bottom: 2em;
+ 	padding: 3px 8px;
+ 	text-transform: uppercase;
+
+ 	@include media($large-screen) {
+ 		margin-bottom: 3.3em;
+ 	}
+ }
+
+.user_info{
+	color: $base-accent-color;
+}
+

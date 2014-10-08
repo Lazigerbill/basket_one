@@ -1,32 +1,44 @@
 
-
-<p>
-  Welcome back, <%= @user.email %>!
-</p>
-
-<h2>My favorite 3 stocks:</h2>
-
-<ul>
-	<% @user.stocks.each do |stock| %>
-		<li><%= stock.company_name %></li>
-<% end %>
-</ul>
+<div class="side-image">
+  <div class="images-wrapper">
+  	<h2>Account Information</h2>
+  	<%= image_tag @user.user_image, :class => "profile_pic" %>
+  	<p>Username: <span class = "user_info"><%= @user.email %></span> </p>
+  	<p>Member since: <span class = "user_info"><%= @user.created_at.strftime("%b %d, %Y") %></span></p>
+  	<p>Investor type: <span class = "investor_type">Buy-and-Hold</span></p>
+	<br>
+	<br>
+	<br>
 
 
+  	<%= link_to 'Go to my Dashboard', root_url, :class => "sign-up" %>
+  	
+  </div>
+    <div class="content">
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Dashboard', root_url %>
+    <h2>My Portfolio:</h2>
 
+    <table class="table-borders">
+      <thead>
+        <tr>
+          <th>Stock name</th>
+          <th>Ticker Symbol</th>
+          <th>Remove?</th>
+        </tr>
+      </thead>
+      <tbody>
+      	<% @user.stocks.each do |stock| %>
+    	    <tr>
+    	      <td><%= stock.company_name %></td>
+    	      <td><%= stock.yahoo_symbol %></td>
+    	      <td><button><%= link_to 'Remove', stock, method: :delete, data: { confirm: 'Are you sure?' } %></button></td>
+    	    </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
 
-<aside>
-	<h2>Account Information</h2>
-	<%= image_tag @user.user_image %>
-	<p>username</p>
-	<p>member since</p>
-	<p>investor type</p>
-	<p>sign out button</p>
-
-</aside>
 
 
 <!-- Game profile here -->
