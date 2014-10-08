@@ -1,4 +1,7 @@
 .add_portfolio{
-	@include span-columns(8);
-	@include shift(2);
+	@include outer-container;
 }
+
+.table_selection{
+     text-align: center;
+  }

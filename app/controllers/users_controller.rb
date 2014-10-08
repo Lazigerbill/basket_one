@@ -22,7 +22,8 @@ class UsersController < ApplicationController
   # GET /users/1/edit
   def edit
     @stocks = @user.stocks.all
-    ticker_lookup(params[:search].to_s)
+    search_value = params[:search].to_s.gsub(" ", "+")
+    ticker_lookup(search_value)
 
   end
 

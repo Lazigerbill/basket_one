@@ -122,6 +122,7 @@ $side-image-border: 1px solid darken(transparentize($side-image-background-botto
 		padding: 3em;
 		color: white;
 		font-weight: bold;
+		height: 800px;
 
 		@include media($large-screen) {
 			@include span-columns(4);

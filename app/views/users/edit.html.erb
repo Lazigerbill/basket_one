@@ -1,7 +1,47 @@
 <div class = "add_portfolio">
-<h1>Add to my Portfolio</h1>
-<%= render 'form' %>
+	<h1>Add to my Portfolio</h1>
+	<%= link_to 'Back', @user %> 
+	<% if @results %>
+		<%= form_tag user_stocks_path(@user), :method => "post" do %>
+			<% if @results.size >0 %>
+				
+				<table class="table-borders">
+					<thead>
+					  <tr>
+					  	<th class = "table_selection"> Selection </th>	
+					  	<th> Ticker Symbol </th>
+					  	<th> Company Name </th>
+					  	<th> Exchange </th>
+					  </tr>
+					</thead>
+					<tbody>
+						<% @results.each do |result| %>
+						<tr>
+							<td class = "table_selection">
+								<%= radio_button_tag :stock_lookup, "#{result['symbol']},#{result['name']}" %> 
+							</td>
 
-<%= link_to 'Back', @user %> 
+							<td>
+								<%= label_tag :stock_lookup, result["symbol"] %> 
+							</td>
+
+							<td>
+								<%= label_tag :stock_lookup,  result["name"] %>
+							</td>
+
+							<td>		
+								<%= label_tag :stock_lookup,  result["exchDisp"] %>
+							</td>								
+						</tr>
+						<% end %>
+					</tbody>
+				</table>
+
+				<%= submit_tag 'Add to favorites' %>
+			<% end %>
+		<% end %>
+	<% end %>
+
+	<br>
 
 </div>

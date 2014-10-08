@@ -1,21 +1,64 @@
 .topbar{
+	@include row();
 	background-color: black;
 /*	position: absolute;*/
+
 	top: 0px;
 	width: 100%;
-	height: 35px;
+	height: 48px;
 	color: white;
 }
 
 #headline{
 	list-style-type: none;
-	background-color: rgba(255,0,0,0.2);
-	padding: 0px;
-	margin: 5px;
+	width: $large-screen
+/*	background-color: rgba(255,0,0,0.2);*/
+/*	padding: 0px;*/
+
 }
 
 #headline > a{
 	text-decoration: none;
 	color: yellow;
-	font-size: 22px;
+	font-size: 20px;
+	height: auto;
+
 }
+
+.ticker_form{
+	margin: 4px 15px;
+	float: left;
+}
+
+.ticker_dropdown{
+	display: inline-block;
+	background-color: $blue;
+	@extend %button;
+	/*@include appearance(none);*/
+	border: none;
+	cursor: pointer;
+	user-select: none;
+	vertical-align: middle;
+	white-space: nowrap;
+	height: 2.5em;
+	
+}
+
+.sub_button{
+	display: inline-block;
+	background-color: green !important;
+}
+
+.news_window{
+	display: inline-block;
+	margin-top: 5px;
+}
+
+.top_news{
+	float: left;
+	color: yellow;
+	font-size: 20px;
+	margin-right: 10px;
+	/*margin-left: 30px;*/
+}
+
