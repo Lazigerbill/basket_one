@@ -37,7 +37,7 @@ gem 'twitter'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-gem 'pry-rails'
+# gem 'pry-rails'
 gem 'quiet_assets'
 
 gem 'hirb'

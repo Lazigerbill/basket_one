@@ -3,7 +3,13 @@
 <div class = "twitter_window">
 	
 	<div class = "tweet_counts">
-		<%= image_tag('bird_gray_32.png') %>Twitter meter <span id="sparkline">&nbsp;</span> 
+		<% tweet_url_counts = @tweet_url + "tweet?text=" + @twitter_ticker + " tweet%20counts%20spiked!%20Wonder%20what%20the%20hype%20is%20about." %>
+		<i class="fa fa-twitter-square"></i>
+		Twitter trend <span id="sparkline">&nbsp;</span> 
+		
+		<%= link_to tweet_url_counts do %>
+			<i class="fa fa-spinner fa-spin"></i>
+		<% end %>
 	</div>
 
 	<ul class = "tweet_list">
@@ -17,6 +23,18 @@
 						<div class="badges">
 							<h1><em><%= key[:username] %></em></h1>
 							<span class="badge notice"><%= time_ago_in_words(key[:tweet_created_at]) %> ago</span>
+							<% if key[:retweet_count]>0 %>
+								<span class="badge success"><%= key[:retweet_count] %> Retweets </span>
+							<% end %>
+							
+							<% tweet_url_favorite = @tweet_url + "favorite?tweet_id=" + key[:tweet_id] %>
+							<%= link_to image_tag('favorite_default.png'), tweet_url_favorite, :class => "twitter_button" %>
+
+							<% tweet_url_reply = @tweet_url + "tweet?in_reply_to=" + key[:tweet_id] %>
+							<%= link_to image_tag('reply_default.png'), tweet_url_reply, :class => "twitter_button" %>
+
+							<% tweet_url_retweet = @tweet_url + "retweet?tweet_id=" + key[:tweet_id] %>
+							<%= link_to image_tag('retweet_default.png'), tweet_url_retweet, :class => "twitter_button" %>
 						</div>
 						<p><%= key[:text] %></p>
 					</div>

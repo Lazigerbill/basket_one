@@ -1,6 +1,6 @@
 .fundamentals_window{
-	/*@include span-columns(6);*/
-	margin: 0px 2.5px 5px 5px;
+	@include span-columns(6);
+	margin: 0px 2.5px 2.5px 5px;
 	background-image: url(http://www.blogto.com/upload/2010/09/20100926-zTD.jpg);
 	background-size: cover;
 	background-position: bottom;

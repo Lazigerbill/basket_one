@@ -19,7 +19,7 @@ class Tweet < ActiveRecord::Base
 		]
 	end
 	def self.sort_tweets_for_the_past_number_of_days(ticker, days)
-		self.where({ticker: (ticker), tweet_created_at: (days).day.ago..Time.now}).order(:tweet_created_at).reverse_order.limit(9)   
+		self.where({ticker: (ticker), tweet_created_at: (days).day.ago..Time.now}).order(:tweet_created_at).reverse_order.order(:retweet_count).limit(9)   
 	end
 
 	def self.get_authorized		
@@ -32,7 +32,12 @@ class Tweet < ActiveRecord::Base
 	end
 
 	def self.download_tweets(client, ticker)
-		client.search((ticker), :result_type => "mixed", :count => 5).each do |tweet|
+		if Tweet.exists?(['ticker = ?', ticker])
+			since_id = Tweet.where({ticker: (ticker)}).last.tweet_id.to_i
+		else
+			since_id = Tweet.order(:tweet_id).last.to_i
+		end
+		client.search((ticker), :result_type => "mixed", :since_id => since_id).each do |tweet|
 			unless Tweet.exists?(['tweet_created_at = ? AND user_id = ?', tweet.created_at, tweet.user.id])
 				Tweet.create(
 					:ticker => (ticker),
@@ -41,7 +46,9 @@ class Tweet < ActiveRecord::Base
 					:user_id => tweet.user.id,
 					:profile_img_url => tweet.user.profile_image_url.to_s,
 					:retweet_count => tweet.retweet_count,
-					:tweet_created_at => tweet.created_at
+					:tweet_created_at => tweet.created_at,
+					:tweet_id => tweet.id,
+					:status_id => tweet.in_reply_to_status_id
 					)
 			end
 		end

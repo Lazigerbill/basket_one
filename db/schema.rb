@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141006202938) do
+ActiveRecord::Schema.define(version: 20141009211401) do
 
   create_table "authentications", force: true do |t|
     t.integer  "user_id",    null: false
@@ -46,6 +46,8 @@ ActiveRecord::Schema.define(version: 20141006202938) do
     t.integer  "user_id"
     t.integer  "retweet_count"
     t.string   "ticker"
+    t.string   "tweet_id"
+    t.string   "status_id"
   end
 
   create_table "users", force: true do |t|

@@ -11,9 +11,13 @@ ready = function() {
     var no_items=items.length;  
 
     for (var i=0;i<(no_items/2);i++) {  
-      var title = items[i].title;  
+      var title = items[i].title.replace(/'/g, " ");  
       var link = items[i].link;   
-      headline[i] = "<li id=\"headline\"><a href='" + link + "'>"+ title + "</a></li>";  
+      headline[i] = "<li id=\"headline\"><a href='" + link + "'>"+ title + "</a>" + 
+      "<a href=\'https://twitter.com/intent/tweet?text=$" + qticker + "%20" + title + "&url=" + link + "\'>" + 
+      " <i class=\"fa fa-spinner fa-spin\"></i>" +
+      "</a></li>";
+
       output += headline[i];
     } 
     // Place news stories in div tag

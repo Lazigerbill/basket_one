@@ -1,3 +1,7 @@
 .line_charting{
-	/*@include span-columns(6);*/
+	@include span-columns(6);
+}
+
+#container{
+	height: 390px;
 }
