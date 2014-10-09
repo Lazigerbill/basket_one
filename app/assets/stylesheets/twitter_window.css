@@ -3,49 +3,89 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .twitter_window{
-	float: right;
-	margin: 10px;
-}
-
-.tweet{
-	list-style-type: none;
-	height: 72px;
-	background-color: rgba(0, 0, 0, 0.8);
-	color: white;
-	border: 1px solid black;
+	/*@include span-columns(6);  */
+  /*width: 48%;*/
+  /*display: inline-block;*/
+	margin: 5px 5px 0px 2.5px;
+	border: 1px solid grey;
 	border-radius: 10px;
 	overflow: hidden;
-	margin: 5px;
 }
 
-.profile_pic{
-	display: inline-block; 
-	float: left;
-	height: 70px;
-}
-
-
-
-.tweet_content{
-	margin: 5px;
-	word-wrap: break-word;
-}
-
-.tweet_info{
-}
-
-.timeago{
-	float: right;
-	border: 1px solid white !important;
-	padding: 2px;
-	border-radius: 3px;
-	background-color: white;
-	color: black;
+.tweet_list{
+	margin: 10px 10px 0px 10px;
 }
 
 .tweet_counts{
-	border: 1px solid white;
-	background-color: white;
-	border-radius: 5px;
+	background-color: desaturate(darken($base-accent-color, 20), 30);
+	color: white;
+	height: 45px;
 	font-size: 20px;
+	font-weight: bold;
+	padding-top: 0.3em;
+	text-align: center;
+	img{
+		height: 18px;
+		margin: 9px 6px 0px 6px;
+	}
 }
+
+#sparkline{
+	margin-top: 3em;
+}
+
+// Adjust sparkline tooltip
+.jqstooltip {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+// badges
+
+.badges {
+  $badge-background: $medium-gray;
+  $badge-dark-color: $dark-gray;
+  $badge-error-color: $error-color;
+  $badge-notice-color: $notice-color;
+  $badge-success-color: $success-color;
+  $badge-font-color: #fff;
+  $badge-font-size: $base-font-size * .75;
+	h1{
+		display: inline-block;	
+	}
+  display: inline-block;
+  margin-bottom: $base-line-height;
+
+  .badge {
+    @include inline-block;
+    background: $badge-background;
+    border-radius: 2em;
+    color: $badge-font-color;
+    font-size: $badge-font-size;
+    font-weight: 600;
+    line-height: 1;
+    padding: .25em 1em;
+    text-align: center;
+
+    &.dark {
+      background: $badge-dark-color;
+    }
+
+    &.error {
+      background: $badge-error-color;
+      color: darken($badge-error-color, 60);
+    }
+
+    &.notice {
+      background: $badge-notice-color;
+      color: darken($badge-notice-color, 60);
+    }
+
+    &.success {
+      background: $badge-success-color;
+      color: darken($badge-success-color, 60);
+    }
+  }
+}
+

@@ -1,0 +1,29 @@
+<!-- This is the Twitter window -->
+
+<div class = "twitter_window">
+	
+	<div class = "tweet_counts">
+		<%= image_tag('bird_gray_32.png') %>Twitter meter <span id="sparkline">&nbsp;</span> 
+	</div>
+
+	<ul class = "tweet_list">
+		<% @tweets.each do |key, value| %>
+			<li>
+				<div class="comment">
+					<div class="comment-image">
+						<%= image_tag (key[:profile_img_url]) %>
+					</div>
+					<div class="comment-content">
+						<div class="badges">
+							<h1><em><%= key[:username] %></em></h1>
+							<span class="badge notice"><%= time_ago_in_words(key[:tweet_created_at]) %> ago</span>
+						</div>
+						<p><%= key[:text] %></p>
+					</div>
+				</div>
+			</li>
+		<% end %>
+	</ul>	
+
+
+</div>

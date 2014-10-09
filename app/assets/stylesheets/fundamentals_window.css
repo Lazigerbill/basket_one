@@ -1,14 +1,12 @@
 .fundamentals_window{
+	/*@include span-columns(6);*/
+	margin: 0px 2.5px 5px 5px;
 	background-image: url(http://www.blogto.com/upload/2010/09/20100926-zTD.jpg);
-	width: 590px;
-	height: 393px;
-	padding: 20px;
+	background-size: cover;
+	background-position: bottom;
+	padding: 15px;
+	overflow: hidden;
 	border-radius: 10px;
-	margin: 10px;
-/*	position: absolute;*/
-	right: 0px;
-	bottom: 0px;	
-	float: left;
 }
 
 .fundamentals_window_box{
@@ -16,16 +14,21 @@
 	width: 100%;
 	height: 100%;
 	color: white;
+	padding: 10px;
+	font-weight: bold;
 }
 
 #PEGChart{
 	display: inline-block;
+	margin-left: 23px;
 }
 
 #PEChart{
 	display: inline-block;
+	margin-left: 23px;
 }
 
 #growth_est{
 	display: inline-block;
+	margin-left: 23px;
 }

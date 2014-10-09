@@ -1,7 +1,7 @@
 <div class = "add_portfolio">
 	<h1>Add to my Portfolio</h1>
 	<%= link_to 'Back', @user %> 
-	<% if @results %>
+	<% if @results.length>0 %>
 		<%= form_tag user_stocks_path(@user), :method => "post" do %>
 			<% if @results.size >0 %>
 				
@@ -40,6 +40,10 @@
 				<%= submit_tag 'Add to favorites' %>
 			<% end %>
 		<% end %>
+	<% else %>
+	<p>Your search did not return any results!  Please try again.</p>
+
+
 	<% end %>
 
 	<br>

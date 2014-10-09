@@ -1,10 +1,10 @@
 $(document).on('ready page:load', function(){
 	$('.tweet_list').newsTicker({
-		row_height: 79,
+		row_height: 101,
 		max_rows: 3,
-		speed: 600,
+		speed: 1200,
 		direction: 'up',
-		duration: 4000,
+		duration: 6000,
 		autostart: 1,
 		pauseOnHover: 1
 	});

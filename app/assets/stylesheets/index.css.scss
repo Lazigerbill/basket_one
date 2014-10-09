@@ -1,0 +1,29 @@
+.overview_contents{
+	// @include row();
+}
+
+.q_container{
+	background-color: black;
+	color: white;
+	font-family: 'Georgia';
+	font-size: 1.5em;
+	min-height: 260px;
+	padding: 40px 250px;
+}
+
+.q_image{
+	width: 6em;
+	margin-right: 15px;
+	float: left;
+	height: auto;
+	border-radius: 128px/160px;
+	padding: 0em;
+}
+
+.q_content{
+	font-style: italic;
+}
+
+#author{
+	font-size: 0.7em;
+}

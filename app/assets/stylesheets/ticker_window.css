@@ -1,28 +1,30 @@
 .ticker_window{
+	/*@include span-columns(6);*/
+	/*width: 48%;*/
+	/*display: inline-block;*/
 	background-image: url(http://www.blogto.com/upload/2010/09/20100926-zTD.jpg);
-	width: 590px;
-	height: 350px;
+	background-size: cover;
+	background-position: top;
 	padding: 15px;
 	border-radius: 10px;
-	float: right;
-	margin: 10px;
+	margin: 5px 2.5px 0px 5px;
 }
 
 .ticker_window_box{
 	background-color: rgba(0,0,0,0.6);
 	width: 100%;
-	height: 100%;
+	height: 330px;
 	color: white;
 }
 
 .logo{
 	height: 50px;
-	margin: 0px 10px 0px 10px;
+	// margin: 0px 10px 0px 10px;
 	float: left;
 }
 
 #company{
-	margin: 10px 10px 0px 10px;
+	// margin: 0px 10px 0px 10px;
 	font-size: 40px;
 	font-family: "Verdana";
 	text-align: center;
@@ -30,15 +32,15 @@
 
 #tick_arrow{
 	float: left;
-	margin-top: 25px;
-	margin-left: 10px;
+	margin-top: 30px;
+	margin-left: 20px;
 	height: 100px;
 /*	display: inline-block;*/
 }
 
 #last_trade{
 	margin-top: -15px;
-	font-size: 150px;
+	font-size: 120px;
 	text-align: center;
 }
 
@@ -46,7 +48,7 @@
 	font-size: 40px;
 	text-align: right;
 	margin-right: 70px;
-	margin-top: -20px;
+	margin-top: -40px;
 	color: green;
 }
 
@@ -54,7 +56,7 @@
 #bottom_left{
 	float: left;
 	margin-left: 10px;
-	margin-top: 15px;
+	// margin-top: 15px;
 	font-size: 20px;
 }
 
@@ -66,6 +68,6 @@
 #bottom_right{
 	float: right;
 	margin-right: 10px;
-	margin-top: 15px; 
+	// margin-top: 15px; 
 	font-size: 20px;
 }

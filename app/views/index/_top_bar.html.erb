@@ -1,0 +1,13 @@
+<!-- This is the news part -->
+
+<div class = "topbar">
+	<%= form_tag root_path, :method => "get", :class => "ticker_form" do %>
+		<%= select_tag(:ticker, options_for_select(@stocks, params[:ticker]), :class => "ticker_dropdown") %>
+		<%= submit_tag 'GO!', :class => "sub_button" %>
+<% end %>
+	<div class = "news_window">
+		<div class = "top_news">Top News: </div>
+		<ul class = "newsticker">
+		</ul>
+	</div>
+</div>
