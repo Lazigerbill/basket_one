@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20141009211401) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "authentications", force: true do |t|
     t.integer  "user_id",    null: false
     t.string   "provider",   null: false
@@ -59,6 +62,6 @@ ActiveRecord::Schema.define(version: 20141009211401) do
     t.string   "user_image"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
 
 end
