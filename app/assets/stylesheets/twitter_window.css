@@ -3,12 +3,14 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .twitter_window{
-	@include span-columns(6);  
+	@include span-columns(6); 
+  @include omega(); 
 
 
 	margin: 2.5px 5px 0px 2.5px;
 	border: 1px solid grey;
-	border-radius: 10px;
+	border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
 	overflow: hidden;
 }
 
@@ -89,3 +91,14 @@
   }
 }
 
+/*Twitter buttons*/
+
+      .twitter_button {
+        height: 1em;
+        opacity: .7;
+
+        &:hover {
+          height: 1.2em;
+          opacity: 1;
+}
+}

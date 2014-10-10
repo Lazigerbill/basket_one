@@ -5,7 +5,7 @@ get "oauth/callback" => "oauths#callback" # for use with Github, Facebook
 get "oauth/:provider" => "oauths#oauth", :as => :auth_at_provider
 get 'login' => 'user_sessions#new', :as => :login
 post 'logout' => 'user_sessions#destroy', :as => :logout
-
+get "index/about" => "index#about"
 
 root :to => 'index#index'
 

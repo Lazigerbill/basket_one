@@ -1,7 +1,8 @@
 .line_charting{
 	@include span-columns(6);
-}
+	@include omega(); 
 
-#container{
-	height: 390px;
+	#container{
+		height: 390px;
+	}
 }

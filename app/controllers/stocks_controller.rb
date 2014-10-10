@@ -14,11 +14,14 @@ class StocksController < ApplicationController
 				@stock = Stock.new
 				@stock.yahoo_symbol = stock_symbol
 				@stock.twitter_symbol = "$" + stock_symbol.to_s
+				# Tweet.download_tweets(Tweet.get_authorized, @stock.twitter_symbol)
 				@stock.company_name = stock_name
 				@stock.save
 			end
-			@user.stocks << @stock
-			@user.save
+			if @user.stocks.find_by_yahoo_symbol(stock_symbol).nil?
+				@user.stocks << @stock
+				@user.save
+			end
 		end
 		redirect_to user_path(current_user)
 	end

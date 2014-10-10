@@ -6,7 +6,8 @@
 	background-size: cover;
 	background-position: top;
 	padding: 15px;
-	border-radius: 10px;
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
 	margin: 2.5px 2.5px 0px 5px;
 }
 

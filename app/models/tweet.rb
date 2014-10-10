@@ -33,9 +33,9 @@ class Tweet < ActiveRecord::Base
 
 	def self.download_tweets(client, ticker)
 		if Tweet.exists?(['ticker = ?', ticker])
-			since_id = Tweet.where({ticker: (ticker)}).last.tweet_id.to_i
+			since_id = Tweet.where({ticker: (ticker)}).order(:tweet_id).last.tweet_id.to_i
 		else
-			since_id = Tweet.order(:tweet_id).last.to_i
+			since_id = Tweet.where({tweet_created_at: 3.day.ago..2.day.ago}).order(:tweet_id).last.tweet_id
 		end
 		client.search((ticker), :result_type => "mixed", :since_id => since_id).each do |tweet|
 			unless Tweet.exists?(['tweet_created_at = ? AND user_id = ?', tweet.created_at, tweet.user.id])

@@ -24,4 +24,10 @@ class IndexController < ApplicationController
 		@tweet_url = "https://twitter.com/intent/" 
 
 	end
+
+	def about
+		
+		@user = current_user
+		
+	end
 end
