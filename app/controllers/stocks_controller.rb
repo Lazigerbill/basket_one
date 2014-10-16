@@ -1,5 +1,5 @@
 class StocksController < ApplicationController
-	# before_action :set_user, only: [:show, :edit, :update, :destroy]
+
 	def new
 		@user = current_user
 		@stock = @user.stocks.build
@@ -21,17 +21,18 @@ class StocksController < ApplicationController
 			if @user.stocks.find_by_yahoo_symbol(stock_symbol).nil?
 				@user.stocks << @stock
 				@user.save
+
 			end
 		end
-		redirect_to user_path(current_user)
+		redirect_to user_path(current_user), :notice => "#{@stock.company_name} is added to portfolio." 
 	end
 
 	def destroy
- 		current_user.stocks.destroy(params[:id])
-	  	respond_to do |format|
-	    	format.html { redirect_to user_url(current_user), notice:  'Your favorite list is updated.' }
-	    	format.json { head :no_content }
-	  end
+		current_user.stocks.destroy(params[:id])
+		respond_to do |format|
+			format.html { redirect_to user_url(current_user), notice: "Your portfolio is updated." }
+			format.json { head :no_content }
+		end
 	end
 
 	private

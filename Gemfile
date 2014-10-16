@@ -51,3 +51,7 @@ gem 'bourbon'
 gem 'neat'
 
 gem 'httparty'
+
+gem 'figaro'
+
+

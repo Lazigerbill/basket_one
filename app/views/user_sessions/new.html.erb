@@ -1,31 +1,29 @@
-<!-- Hero -->
-<!-- <div class="wrapper-for-content-outside-of-footer"> -->
-	<div class="hero">
-		<div>
-			<p class="flash-notice"><%= flash[:notice] %></p>
-			<p class="flash-alert"><%= flash[:alert] %></p>
-		</div>
-		<div class="hero-inner">
-			<a href="" class="hero-logo"><%= image_tag("logo_white.gif", :alt => "Logo image") %></a>
-			<div class="hero-copy">
-				<h1>Basket. One.</h1>
-				<p>This apps provides novice investors an overiew of a stock and let them share their experiences within the Twitter community.</p>
-			</div>
-			<button><%= image_tag "bird_blue_med.png" %> <%= link_to 'Sign in with Twitter', auth_at_provider_path(:provider => :twitter) %></button>
-		</div>
+
+<div class="hero">
+	<div>
+		<p class="flash-notice"><%= flash[:notice] %></p>
+		<p class="flash-alert"><%= flash[:alert] %></p>
 	</div>
-
-	<!-- Quote -->
-
-	<div class="q_container">
-		<%= image_tag "carnegie.gif", :class => "q_image" %>	
-		<div class="q_content">
-			<p>"Concentrate your energies, your thoughts and your capital. The wise man puts all his eggs in one basket and watches the basket."</p>
-			<p id = "author">Andrew Carnegie</p>
+	<div class="hero-inner">
+		<a href="" class="hero-logo"><%= image_tag("logo_white.gif", :alt => "Logo image") %></a>
+		<div class="hero-copy">
+			<h1>Basket. One.</h1>
+			<p>This apps provides novice investors an overiew of a stock and let them share their experiences within the Twitter community.</p>
 		</div>
+		<button><%= image_tag "bird_blue_med.png" %> <%= link_to 'Sign in with Twitter', auth_at_provider_path(:provider => :twitter) %></button>
 	</div>
+</div>
 
-		<!-- <div class="push"></div> -->
+<!-- Quote by Andrew Carnegie-->
 
-	<!-- Footer -->
+<div class="q_container">
+	<%= image_tag "carnegie.gif", :class => "q_image" %>	
+	<div class="q_content">
+		<p>"Concentrate your energies, your thoughts and your capital. The wise man puts all his eggs in one basket and watches the basket."</p>
+		<p id = "author">Andrew Carnegie</p>
+	</div>
+</div>
+
+
+
 	

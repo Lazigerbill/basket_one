@@ -5,19 +5,21 @@
   	<%= image_tag @user.user_image, :class => "profile_pic" %>
   	<p>Username: <span class = "user_info"><%= @user.email %></span> </p>
   	<p>Member since: <span class = "user_info"><%= @user.created_at.strftime("%b %d, %Y") %></span></p>
+    <!-- future feature to identify investor type -->
   	<p>Investor type: <span class = "investor_type">Buy-and-Hold</span></p>
-	<br>
-	<br>
-	<br>
-
-
-  	<%= link_to 'Go to my Dashboard', root_url, :class => "sign-up" %>
-  	
+  	<br>
+  	<br>
+  	<br>
+    <%= link_to 'Go to my Dashboard', root_url, :class => "sign-up" %>	
   </div>
-    <div class="content">
+
+  <div class="content">
+    <div>
+      <p class="flash-notice"><%= flash[:notice] %></p>
+      <p class="flash-alert"><%= flash[:alert] %></p>
+    </div>
 
     <h2>My Portfolio:</h2>
-
     <% if @user.stocks.length>0 %>
       <table class="table-borders">
         <thead>
@@ -42,6 +44,7 @@
     <% end %>
     <p>*add stocks to your portfolio by using the search bar at the top of this page.</p>
   </div>
+
 </div>
 
 
