@@ -51,7 +51,7 @@ gem 'bourbon'
 gem 'neat'
 
 gem 'httparty'
-
+gem 'pg', '~> 0.17.1'
 gem 'figaro'
 
 

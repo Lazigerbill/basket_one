@@ -14,10 +14,9 @@
   </div>
 
   <div class="content">
-    <div>
-      <p class="flash-notice"><%= flash[:notice] %></p>
-      <p class="flash-alert"><%= flash[:alert] %></p>
-    </div>
+      <% flash.each do |name, msg| %>
+        <%= content_tag :div, msg, class: "flash-notice" %>
+      <% end %>
 
     <h2>My Portfolio:</h2>
     <% if @user.stocks.length>0 %>

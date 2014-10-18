@@ -68,7 +68,6 @@ class UsersController < ApplicationController
   end
 
   def ticker_lookup(search)
-    # binding.pry
     url = 'http://d.yimg.com/autoc.finance.yahoo.com/autoc?query=' + search + '&callback=YAHOO.Finance.SymbolSuggest.ssCallback'
     response = HTTParty.get(url)
     response_adj = response.body[39..-2]

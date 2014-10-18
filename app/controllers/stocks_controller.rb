@@ -30,7 +30,7 @@ class StocksController < ApplicationController
 	def destroy
 		current_user.stocks.destroy(params[:id])
 		respond_to do |format|
-			format.html { redirect_to user_url(current_user), notice: "Your portfolio is updated." }
+			format.html { redirect_to user_url(current_user), alert: "Your portfolio is updated." }
 			format.json { head :no_content }
 		end
 	end

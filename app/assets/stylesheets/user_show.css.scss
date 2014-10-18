@@ -4,9 +4,8 @@ section.show_user{
 
 aside{
 	@include span-columns(4);
-	@include background(url("stock_exchange.jpg"), bottom center no-repeat scroll);
-	// position: absolute;
-	// float: left;
+	background-image: url("stock_exchange.jpg");
+	background: bottom center no-repeat scroll;
 }
 
 div.my_portfolio{
@@ -216,7 +215,14 @@ $side-image-border: 1px solid darken(transparentize($side-image-background-botto
  	}
  }
 
-.user_info{
-	color: $base-accent-color;
+ .user_info{
+ 	color: $base-accent-color;
+ }
+
+.flash-notice{
+	@extend %flash-success;
 }
 
+.flash-alert{
+	@extend %flash-error;
+}
