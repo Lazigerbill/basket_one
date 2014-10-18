@@ -35,15 +35,15 @@ class Tweet < ActiveRecord::Base
 
 	def self.download_tweets(client, ticker)
 		@stock = Stock.find_by_yahoo_symbol(ticker)
-		if Tweet.count == 0
+		if Tweet.count == 0 || Tweet.where({tweet_created_at: 7.day.ago..2.day.ago}).count == 0
 			since_id = 0
 		elsif @stock.nil? || Tweet.where({stock_id: (@stock.id)}).count == 0
-			since_id = Tweet.last.tweet_id
+			since_id = Tweet.where({tweet_created_at: 7.day.ago..2.day.ago}).order(:tweet_id).last.tweet_id
 		else
 			since_id = Tweet.where({stock_id: (@stock.id)}).order(:tweet_id).last.tweet_id
 		end
-		binding.pry
-		client.search(("$" + ticker), :result_type => "mixed", :since_id => since_id).each do |tweet|
+
+		client.search(("$" + ticker), :result_type => "popular", :since_id => since_id).each do |tweet|
 			unless Tweet.exists?(['tweet_created_at = ? AND user_id = ?', tweet.created_at, tweet.user.id])
 				Tweet.create(
 					:stock_id => @stock.id,
