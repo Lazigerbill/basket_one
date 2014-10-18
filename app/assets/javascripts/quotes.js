@@ -35,8 +35,16 @@ $('ticker_window').ready(function(){
   setInterval(function(){
     $('#last_trade').effect("pulsate");
     $('#change').effect("pulsate");
-    var url1 = 'https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.quote%20where%20symbol%20in%20(%22'+qticker+'%22)&format=json&diagnostics=true&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback=show_quote'
+    var url1 = 'https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.quote%20where%20symbol%20in%20(%22'+qticker+'%22)&format=json&diagnostics=true&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback=show_quote';
     $.getScript(url1)
   }, 15000);
 });
 
+var ready;
+ready = function() {  
+  var url_init_quote = "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.quote%20where%20symbol%20in%20(%22" + qticker + "%22)&format=json&diagnostics=true&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback=show_quote";
+  $.getScript(url_init_quote);
+}
+  
+$(document).ready(ready);
+$(document).on('page:load', ready);

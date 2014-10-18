@@ -37,7 +37,7 @@ class Tweet < ActiveRecord::Base
 		@stock = Stock.find_by_yahoo_symbol(ticker)
 		if Tweet.count == 0 || Tweet.where({tweet_created_at: 7.day.ago..2.day.ago}).count == 0
 			since_id = 0
-		elsif @stock.nil? || Tweet.where({stock_id: (@stock.id)}).count == 0
+		elsif Tweet.where({stock_id: (@stock.id)}).count == 0
 			since_id = Tweet.where({tweet_created_at: 7.day.ago..2.day.ago}).order(:tweet_id).last.tweet_id
 		else
 			since_id = Tweet.where({stock_id: (@stock.id)}).order(:tweet_id).last.tweet_id

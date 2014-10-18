@@ -26,7 +26,6 @@ class IndexController < ApplicationController
 			redirect_to @user, notice: 'You don\'t have any stocks in your portfolio, please add stocks.'
 		end
 		
-		
 
 
 
