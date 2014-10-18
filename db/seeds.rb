@@ -6,10 +6,4 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-	Stock.create(yahoo_symbol: 'YHOO', twitter_symbol: '$YHOO', company_name: 'Yahoo! Inc.')
-	Stock.create(yahoo_symbol: 'MSFT', twitter_symbol: '$MSFT', company_name: 'Microsoft Corporation')
-	Stock.create(yahoo_symbol: 'CSCO', twitter_symbol: '$CSCO', company_name: 'Cisco Systems, Inc.')
-
-	# Stocks_user.create(user_id: 3, stock_id: 1)
-	# Stocks_user.create(user_id: 3, stock_id: 2)
-	# Stocks_user.create(user_id: 3, stock_id: 3)
+	# Stock.create(yahoo_symbol: 'YHOO', twitter_symbol: '$YHOO', company_name: 'Yahoo! Inc.')

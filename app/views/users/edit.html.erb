@@ -18,7 +18,7 @@
 						<% @results.each do |result| %>
 						<tr>
 							<td class = "table_selection">
-								<%= radio_button_tag :stock_lookup, "#{result['symbol']},#{result['name']}" %> 
+								<%= radio_button_tag :stock_lookup, "#{result['symbol']},#{result['name']}, #{result['exchDisp']}" %> 
 							</td>
 
 							<td>

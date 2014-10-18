@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141009211401) do
+ActiveRecord::Schema.define(version: 20141018204514) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,10 +26,10 @@ ActiveRecord::Schema.define(version: 20141009211401) do
 
   create_table "stocks", force: true do |t|
     t.string   "yahoo_symbol"
-    t.string   "twitter_symbol"
     t.string   "company_name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "exchange"
   end
 
   create_table "stocks_users", force: true do |t|
@@ -46,11 +46,11 @@ ActiveRecord::Schema.define(version: 20141009211401) do
     t.datetime "tweet_created_at"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "user_id"
     t.integer  "retweet_count"
-    t.string   "ticker"
-    t.string   "tweet_id"
     t.string   "status_id"
+    t.integer  "stock_id"
+    t.integer  "tweet_id",         limit: 8
+    t.integer  "user_id",          limit: 8
   end
 
   create_table "users", force: true do |t|

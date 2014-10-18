@@ -27,13 +27,13 @@
 								<span class="badge success"><%= key[:retweet_count] %> Retweets </span>
 							<% end %>
 							
-							<% tweet_url_favorite = @tweet_url + "favorite?tweet_id=" + key[:tweet_id] %>
+							<% tweet_url_favorite = @tweet_url + "favorite?tweet_id=" + key[:tweet_id].to_s %>
 							<%= link_to image_tag('favorite_default.png', :class => "twitter_button"), tweet_url_favorite %>
 
-							<% tweet_url_reply = @tweet_url + "tweet?in_reply_to=" + key[:tweet_id] %>
+							<% tweet_url_reply = @tweet_url + "tweet?in_reply_to=" + key[:tweet_id].to_s %>
 							<%= link_to image_tag('reply_default.png', :class => "twitter_button"), tweet_url_reply %>
 
-							<% tweet_url_retweet = @tweet_url + "retweet?tweet_id=" + key[:tweet_id] %>
+							<% tweet_url_retweet = @tweet_url + "retweet?tweet_id=" + key[:tweet_id].to_s %>
 							<%= link_to image_tag('retweet_default.png', :class => "twitter_button"), tweet_url_retweet %>
 						</div>
 						<p><%= key[:text] %></p>

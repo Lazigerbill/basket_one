@@ -22,8 +22,8 @@
 		<% else %>
 			window.tweet_count = 0;
 		<% end %>
-		<% if @quote_ticker.present? %>
-			window.qticker = "<%= @quote_ticker %>";
+		<% if @stock.present? %>
+			window.qticker = "<%= @stock %>";
 		<% else %>
 			window.qticker = "TD";
 		<% end %>

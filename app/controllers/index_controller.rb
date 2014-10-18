@@ -7,18 +7,19 @@ class IndexController < ApplicationController
 			@stocks.sort!
 		end
 
-		@quote_ticker = if params[:ticker].present?
-			params[:ticker]
+		if params[:ticker].present?
+			@stock = Stock.find_by_yahoo_symbol(params[:ticker]).yahoo_symbol
+		elsif @stocks.size > 0
+			@stock = @stocks[0]
 		else
-			@stocks[0]
+			@stock = Stock.first.yahoo_symbol
 		end
-		@twitter_ticker = "$" + @quote_ticker.to_s
+		
+		@twitter_ticker = "$" + @stock
 
 		# Tweet.download_tweets(Tweet.get_authorized, @twitter_ticker)
-		@tweets = Tweet.sort_tweets_for_the_past_number_of_days(@twitter_ticker, 7)
-		# @tweet_count = Tweet.count_total_tweets(ticker, 7)
-		@most_retweeted = @tweets.order("retweet_count DESC").first
-		@tweet_array = Tweet.tweet_count_array(@twitter_ticker)
+		@tweets = Tweet.sort_tweets_for_the_past_number_of_days(@stock, 7)
+		@tweet_array = Tweet.tweet_count_array(@stock)
 
 		# Tweet web intents
 		@tweet_url = "https://twitter.com/intent/" 
