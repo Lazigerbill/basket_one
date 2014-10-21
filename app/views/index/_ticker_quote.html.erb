@@ -4,15 +4,16 @@
 	<div class = "ticker_window_box">	
 		<!-- <img class = "logo" src="http://logonoid.com/images/td-bank-logo.png" alt=""> -->
 		<% if @user.logs.last.stock_id != nil && @stock == Stock.find(@user.logs.last.stock_id).yahoo_symbol %>
+
 			<div id = "sell">
-				<%= form_tag("sell") do %>
+				<%= form_tag(user_logs_path(@user), :method => :post) do %>
 					<%= hidden_field_tag :sell_action %>
 					<%= submit_tag "SELL", data: { confirm: "Are you sure you want to get out of #{@stock}?" } %>
 				<% end %>
 			</div>	
 		<% else %>	
 			<div id = "buy">
-				<%= form_tag("buy") do %>
+				<%= form_tag(user_logs_path(@user), :method => :post) do %>
 					<%= hidden_field_tag :buy_action %>
 					<%= submit_tag "BUY", data: { confirm: "Are you sure you want to put all your eggs in #{@stock}?" } %>
 				<% end %>

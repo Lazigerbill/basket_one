@@ -6,8 +6,7 @@ get "oauth/:provider" => "oauths#oauth", :as => :auth_at_provider
 get 'login' => 'user_sessions#new', :as => :login
 post 'logout' => 'user_sessions#destroy', :as => :logout
 get "index/about" => "index#about"
-post "buy" => "logs#buy", :as => :buy
-post "sell" => "logs#sell", :as => :sell
+
 
 root :to => 'index#index'
 
@@ -15,9 +14,10 @@ root :to => 'index#index'
 resources :user_sessions
 resources :users do 
   resources :stocks, :shallow => :true
-  resources :logs, :shallow => :true
 end
-
+resources :users do 
+  resources :logs
+end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

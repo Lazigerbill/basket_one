@@ -4,6 +4,9 @@ ready = function() {
 		$('#buy_action').attr('value', qticker + "," + $('#last_trade').text());
 	});
 
+	$('#sell').click(function(){
+		$('#sell_action').attr('value', qticker + "," + $('#last_trade').text());
+	});
 }
   
 $(document).ready(ready);	
