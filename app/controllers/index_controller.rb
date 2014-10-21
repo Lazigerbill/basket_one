@@ -1,5 +1,6 @@
 class IndexController < ApplicationController
 	def index
+		@log = Log.new
 		@user = current_user
 		@stocks = []
 		@user.stocks.all.each do |stock|

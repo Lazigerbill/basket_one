@@ -7,7 +7,13 @@
   	<p>Member since: <span class = "user_info"><%= @user.created_at.strftime("%b %d, %Y") %></span></p>
     <!-- future feature to identify investor type -->
   	<p>Investor type: <span class = "investor_type"><%= @user.logs.last.investor_type %></span></p>
-    <p>Points: <span class = "user_info"><%= @user.logs.last.asset_points %></span></p>
+    <% if !@user.logs.last.stock_id %> 
+      <% current_investent = "None" %>
+    <% else %>
+      <% current_investent = Stock.find(@user.logs.last.stock_id).yahoo_symbol %>
+    <% end %>    
+    <p>Current investment: <span class = "user_info"><%= current_investent %></span></p>
+    <p>Total points: <span class = "user_info"><%= @user.logs.last.asset_points %></span></p>
   	<br>
   	<br>
   	<br>

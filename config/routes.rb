@@ -6,6 +6,8 @@ get "oauth/:provider" => "oauths#oauth", :as => :auth_at_provider
 get 'login' => 'user_sessions#new', :as => :login
 post 'logout' => 'user_sessions#destroy', :as => :logout
 get "index/about" => "index#about"
+post "buy" => "logs#buy", :as => :buy
+post "sell" => "logs#sell", :as => :sell
 
 root :to => 'index#index'
 
