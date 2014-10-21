@@ -13,6 +13,7 @@ root :to => 'index#index'
 resources :user_sessions
 resources :users do 
   resources :stocks, :shallow => :true
+  resources :logs, :shallow => :true
 end
 
 

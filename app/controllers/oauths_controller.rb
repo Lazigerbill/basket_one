@@ -12,10 +12,17 @@ class OauthsController < ApplicationController
 			begin
 				@user = create_from(provider)
         # NOTE: this is the place to add '@user.activate!' if you are using user_activation submodule
-
+        @log = Log.new(
+        	user_id: @user.id,
+        	points: 100000,
+        	asset_points: 100000,
+        	transactions: "Intialize",
+        	investor_type: "New account"
+        )
+        @log.save
         reset_session # protect from session fixation attack
         auto_login(@user)
-        redirect_to user_path(@user), :notice => "Logged in from #{provider.titleize}!"
+        redirect_to user_path(@user), :notice => "Logged in from #{provider.titleize}! New account created!"
     rescue
     	redirect_to root_path, :alert => "Failed to login from #{provider.titleize}!"
     end

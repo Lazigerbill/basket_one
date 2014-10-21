@@ -6,7 +6,8 @@
   	<p>Username: <span class = "user_info"><%= @user.email %></span> </p>
   	<p>Member since: <span class = "user_info"><%= @user.created_at.strftime("%b %d, %Y") %></span></p>
     <!-- future feature to identify investor type -->
-  	<p>Investor type: <span class = "investor_type">Buy-and-Hold</span></p>
+  	<p>Investor type: <span class = "investor_type"><%= @user.logs.last.investor_type %></span></p>
+    <p>Points: <span class = "user_info"><%= @user.logs.last.asset_points %></span></p>
   	<br>
   	<br>
   	<br>
