@@ -39,7 +39,7 @@ class LogsController < ApplicationController
 		@log.number_of_shares = @user.logs.last.points/stock_price
 		@log.asset_points = @log.number_of_shares * stock_price + @log.points
 		@log.transactions = "BUY"
-		@log.transaction_price_in_cents = stock_price
+		@log.transaction_price = "$" + stock_price.to_s
 		@log.basket_empty = false
 		@log.save
 		 
@@ -54,7 +54,7 @@ class LogsController < ApplicationController
 		@log.number_of_shares = @user.logs.last.number_of_shares
 		@log.asset_points = @log.points
 		@log.transactions = "SELL"
-		@log.transaction_price_in_cents = stock_price
+		@log.transaction_price = "$" + stock_price.to_s
 		@log.basket_empty = true
 		@log.save
 		

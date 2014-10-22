@@ -26,7 +26,7 @@
               <td><%= log.transactions %></td>
               <td><%= Stock.find(log.stock_id).yahoo_symbol if log.stock_id != nil %></td>
               <td><%= log.number_of_shares %></td>
-              <td><%= log.transaction_price_in_cents %></td>
+              <td><%= log.transaction_price %></td>
               <td><%= log.asset_points %></td>
             </tr>
           <% end %>

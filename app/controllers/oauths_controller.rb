@@ -16,7 +16,7 @@ class OauthsController < ApplicationController
         	user_id: @user.id,
         	points: 100000,
         	asset_points: 100000,
-        	transactions: "Intialize",
+        	transactions: "New account",
         	investor_type: "New account",
             basket_empty: true
         )
