@@ -6,7 +6,7 @@ class Log < ActiveRecord::Base
 	    response = HTTParty.get(url)
 	    response_adj = response.body[14..-3]
 	    array = JSON.parse(response_adj)
-	    @last_trade = array['query']['results']['quote']['LastTradePriceOnly']
+	    last_trade = array['query']['results']['quote']['LastTradePriceOnly'].to_f
 		
 	end
 end
