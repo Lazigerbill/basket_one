@@ -13,7 +13,7 @@
 					<li class="nav-link"><a href="mailto:chaukbill@gmail.com?Subject=Basket%20One" target="_top">Contact</a></li>
 					<li class="nav-link more"><a href="javascript:void(0)">More</a>
 						<ul class="submenu">
-							<li><a href="javascript:void(0)">My Transactions</a></li>
+							<li><%= link_to "My Transactions", user_logs_path(current_user) %></a></li>
 							<li><a href="javascript:void(0)">Rankings</a></li>
 							<li class="more"><a href="javascript:void(0)">Item with submenu</a>
 								<ul class="submenu">

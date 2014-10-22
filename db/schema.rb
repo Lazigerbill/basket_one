@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141021151835) do
+ActiveRecord::Schema.define(version: 20141022190351) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,12 +30,12 @@ ActiveRecord::Schema.define(version: 20141021151835) do
     t.integer  "stock_id"
     t.integer  "number_of_shares"
     t.integer  "asset_points"
-    t.datetime "date"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "transactions"
     t.integer  "transaction_price_in_cents"
     t.integer  "user_id"
+    t.boolean  "basket_empty"
   end
 
   create_table "stocks", force: true do |t|

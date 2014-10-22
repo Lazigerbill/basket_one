@@ -17,7 +17,8 @@ class OauthsController < ApplicationController
         	points: 100000,
         	asset_points: 100000,
         	transactions: "Intialize",
-        	investor_type: "New account"
+        	investor_type: "New account",
+            basket_empty: true
         )
         @log.save
         reset_session # protect from session fixation attack

@@ -1,24 +1,4 @@
-
-<div class="side-image">
-  <div class="images-wrapper">
-  	<h2>Account Information</h2>
-  	<%= image_tag @user.user_image, :class => "profile_pic" %>
-  	<p>Username: <span class = "user_info"><%= @user.email %></span> </p>
-  	<p>Member since: <span class = "user_info"><%= @user.created_at.strftime("%b %d, %Y") %></span></p>
-    <!-- future feature to identify investor type -->
-  	<p>Investor type: <span class = "investor_type"><%= @user.logs.last.investor_type %></span></p>
-    <% if !@user.logs.last.stock_id %> 
-      <% current_investent = "None" %>
-    <% else %>
-      <% current_investent = Stock.find(@user.logs.last.stock_id).yahoo_symbol %>
-    <% end %>    
-    <p>Current investment: <span class = "user_info"><%= current_investent %></span></p>
-    <p>Total points: <span class = "user_info"><%= @user.logs.last.asset_points %></span></p>
-  	<br>
-  	<br>
-  	<br>
-    <%= link_to 'Go to my Dashboard', root_url, :class => "sign-up" %>	
-  </div>
+<%= render '/layouts/side_bar' %>
 
   <div class="content">
       <% flash.each do |name, msg| %>

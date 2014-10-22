@@ -1,0 +1,39 @@
+<%= render '/layouts/side_bar' %>
+
+
+  <div class="content">
+      <% flash.each do |name, msg| %>
+        <%= content_tag :div, msg, class: "flash-notice" %>
+      <% end %>
+
+    <h2>My Transactions:</h2>
+
+      <table class="table-borders">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Transaction</th>
+            <th>Ticker Symbol</th>
+            <th>Number of shares</th>
+            <th>Transcation price</th>
+            <th>Points</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @logs.each do |log| %>
+            <tr>
+              <td><%= log.created_at %></td>
+              <td><%= log.transactions %></td>
+              <td><%= Stock.find(log.stock_id).yahoo_symbol if log.stock_id != nil %></td>
+              <td><%= log.number_of_shares %></td>
+              <td><%= log.transaction_price_in_cents %></td>
+              <td><%= log.asset_points %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+
+  </div>
+
+</div>
