@@ -26,7 +26,7 @@ namespace :log do
 			@log.points = user.logs.last.points
 			@log.stock_id = user.logs.last.stock_id
 			@log.number_of_shares = user.logs.last.number_of_shares
-			@log.asset_points = @log.number_of_shares * stock_price + @log.points
+			@log.asset_points = (@log.number_of_shares * stock_price).round + @log.points
 			@log.transactions = "VAL"
 			@log.transaction_price = "$" + stock_price.to_s
 			@log.basket_empty = false

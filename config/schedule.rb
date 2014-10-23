@@ -5,13 +5,18 @@
 
 # Example:
 set :environment, :development
+set :path, '/Users/Bill/desktop/Assignments/final'
 set :output, "#{path}/log/cron.log"
-# set :path, '/Users/Bill/desktop/Assignments/final'
 # set :environment, :development
 
 
 every 20.minutes do
   rake "twitter:download_tweets"
+end
+
+every 20.minutes do 
+	rake "stock:download_closing"
+	rake "rake log:daily_valuation"
 end
 #
 # every 4.days do

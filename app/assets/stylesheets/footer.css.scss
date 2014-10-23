@@ -12,6 +12,7 @@ html, body {
 }
 
 .footer-2, .push {
+  clear: both;
   height: 17em;
 
   @include media($large-screen) {

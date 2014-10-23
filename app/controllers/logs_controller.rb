@@ -12,7 +12,7 @@ class LogsController < ApplicationController
 						transition_out
 						buy_stock(stock_symbol, stock_price)
 					end
-				redirect_to user_path(current_user), :notice => "You just placed all your eggs in #{stock_symbol}"	
+				redirect_to user_logs_path(current_user), :notice => "You just placed all your eggs in #{stock_symbol}"	
 			end
 		elsif params[:sell_action] != nil
 			stock_symbol, stock_price = params[:sell_action].split(',')
@@ -21,10 +21,10 @@ class LogsController < ApplicationController
 					if @user.logs.last.number_of_shares != 0 && @user.logs.last.stock.yahoo_symbol == stock_symbol
 						sell_stock(stock_symbol, stock_price)
 					end
-				redirect_to user_path(current_user), :notice => "You just sold all your #{stock_symbol}!" 	
+				redirect_to user_logs_path(current_user), :notice => "You just sold all your #{stock_symbol}!" 	
 			end	
 		else
-			redirect_to user_path(current_user), :alert => "Error occurred!"
+			redirect_to user_path(current_user), :notice => "Error occurred!"
 		end		
 	end
 
@@ -34,7 +34,7 @@ class LogsController < ApplicationController
 		@log = Log.new
 		@log.user_id = @user.id
 		@log.investor_type = @user.logs.last.investor_type
-		@log.points = @user.logs.last.points%stock_price
+		@log.points = (@user.logs.last.points%stock_price.to_f).round
 		@log.stock_id = Stock.find_by_yahoo_symbol(stock_symbol).id
 		@log.number_of_shares = @user.logs.last.points/stock_price
 		@log.asset_points = @log.number_of_shares * stock_price + @log.points
@@ -49,7 +49,7 @@ class LogsController < ApplicationController
 		@log = Log.new
 		@log.user_id = @user.id
 		@log.investor_type = @user.logs.last.investor_type
-		@log.points = @user.logs.last.number_of_shares*stock_price.to_f+@user.logs.last.points
+		@log.points = (@user.logs.last.number_of_shares*stock_price.to_f).round + @user.logs.last.points
 		@log.stock_id = Stock.find_by_yahoo_symbol(stock_symbol).id
 		@log.number_of_shares = @user.logs.last.number_of_shares
 		@log.asset_points = @log.points
