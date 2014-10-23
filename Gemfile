@@ -58,4 +58,5 @@ gem 'httparty'
 gem 'pg', '~> 0.17.1'
 gem 'figaro'
 
+gem 'jquery-datatables-rails', '~> 2.2.3'
 

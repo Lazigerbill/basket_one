@@ -7,6 +7,8 @@ ready = function() {
 	$('#sell').click(function(){
 		$('#sell_action').attr('value', qticker + "," + $('#last_trade').text());
 	});
+
+	$('#transaction_table').DataTable();
 }
   
 $(document).ready(ready);	
