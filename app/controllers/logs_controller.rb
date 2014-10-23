@@ -18,7 +18,7 @@ class LogsController < ApplicationController
 			stock_symbol, stock_price = params[:sell_action].split(',')
 			stock_price = stock_price.to_f
 			if !!stock_symbol && !!stock_price
-					if @user.logs.last.number_of_shares != 0 && Stock.find(@user.logs.last.stock_id).yahoo_symbol == stock_symbol
+					if @user.logs.last.number_of_shares != 0 && @user.logs.last.stock.yahoo_symbol == stock_symbol
 						sell_stock(stock_symbol, stock_price)
 					end
 				redirect_to user_path(current_user), :notice => "You just sold all your #{stock_symbol}!" 	
@@ -61,8 +61,8 @@ class LogsController < ApplicationController
 	end
 
 	def transition_out
-		transition_stock = Stock.find(@user.logs.last.stock_id).yahoo_symbol
-		exit_price = Log.pricelookup(transition_stock)
+		transition_stock = @user.logs.last.stock.yahoo_symbol
+		exit_price = Stock.pricelookup(transition_stock)
 		sell_stock(transition_stock, exit_price)
 	end
 

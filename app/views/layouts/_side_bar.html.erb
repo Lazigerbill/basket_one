@@ -8,9 +8,9 @@
     <!-- future feature to identify investor type -->
   	<p>Investor type: <span class = "investor_type"><%= @user.logs.last.investor_type %></span></p>
     <% if @user.logs.last.basket_empty %> 
-      <% current_investent = "None" %>
+      <% current_investent = "Cash is King!" %>
     <% else %>
-      <% current_investent = Stock.find(@user.logs.last.stock_id).yahoo_symbol %>
+      <% current_investent = @user.logs.last.stock.yahoo_symbol %>
     <% end %>    
     <p>Current investment: <span class = "user_info"><%= current_investent %></span></p>
     <p>Total points: <span class = "user_info"><%= @user.logs.last.asset_points %></span></p>

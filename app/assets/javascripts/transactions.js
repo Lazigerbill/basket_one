@@ -8,7 +8,9 @@ ready = function() {
 		$('#sell_action').attr('value', qticker + "," + $('#last_trade').text());
 	});
 
-	$('#transaction_table').DataTable();
+	$('#transaction_table').DataTable({
+        "order": [[ 0, "desc" ]]
+    });
 }
   
 $(document).ready(ready);	

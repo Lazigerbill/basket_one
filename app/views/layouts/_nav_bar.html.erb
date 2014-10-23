@@ -8,27 +8,16 @@
 			<a href="" class="navigation-menu-button" id="js-mobile-menu">MENU</a>
 			<div class="nav">
 				<ul id="navigation-menu">
-					<li class="nav-link"><%= link_to "My Portfolio", user_path(current_user) %></li>
-					<li class="nav-link"><%= link_to "About Us", index_about_path %></li>
-					<li class="nav-link"><a href="mailto:chaukbill@gmail.com?Subject=Basket%20One" target="_top">Contact</a></li>
-					<li class="nav-link more"><a href="javascript:void(0)">More</a>
+					<li class="nav-link more"><a href="javascript:void(0)">My Basket</a>
 						<ul class="submenu">
+							<li><%= link_to "My Watchlist", user_path(current_user) %></li>
 							<li><%= link_to "My Transactions", user_logs_path(current_user) %></a></li>
-							<li><a href="javascript:void(0)">Rankings</a></li>
-							<li class="more"><a href="javascript:void(0)">Item with submenu</a>
-								<ul class="submenu">
-									<li><a href="javascript:void(0)">Sub-submenu Item</a></li>
-									<li><a href="javascript:void(0)">Another Item</a></li>
-								</ul>
-							</li>
-							<li class="more"><a href="javascript:void(0)">Another submenu</a>
-								<ul class="submenu">
-									<li><a href="javascript:void(0)">Sub-submenu</a></li>
-									<li><a href="javascript:void(0)">An Item</a></li>
-								</ul>
-							</li>
 						</ul>
 					</li>
+					<li class="nav-link"><%= link_to "Rankings", index_about_path %></li>
+					<li class="nav-link"><%= link_to "Rules", index_about_path %></li>
+					<li class="nav-link"><%= link_to "About Us", index_about_path %></li>
+					<li class="nav-link"><a href="mailto:chaukbill@gmail.com?Subject=Basket%20One" target="_top">Contacts</a></li>
 				</ul>
 			</div>
 

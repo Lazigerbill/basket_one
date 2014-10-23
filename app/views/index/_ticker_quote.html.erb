@@ -3,7 +3,7 @@
 <div class = "ticker_window">
 	<div class = "ticker_window_box">	
 		<!-- <img class = "logo" src="http://logonoid.com/images/td-bank-logo.png" alt=""> -->
-		<% if @user.logs.last.stock_id != nil && @stock == Stock.find(@user.logs.last.stock_id).yahoo_symbol %>
+		<% if @user.logs.last.stock_id != nil && @stock == @user.logs.last.stock.yahoo_symbol %>
 
 			<div id = "sell">
 				<%= form_tag(user_logs_path(@user), :method => :post) do %>
