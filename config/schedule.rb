@@ -5,7 +5,7 @@
 
 # Example:
 # set :path, '/Users/Bill/desktop/Assignments/final'
-set :environment, :development
+set :environment, :production
 set :output, "#{path}/log/cron.log"
 
 
@@ -14,10 +14,10 @@ every 20.minutes do
 	rake "twitter:download_tweets"
 end
 
-# every 20.minutes do 
-# 	rake "stock:download_closing"
-# 	rake "log:daily_valuation"
-# end
+every 20.minutes do 
+	rake "stock:download_closing"
+	rake "log:daily_valuation"
+end
 
 every :weekday, :at => '5:30 pm' do
 	rake "stock:download_closing"
