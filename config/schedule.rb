@@ -11,7 +11,7 @@ set :output, "#{path}/log/cron.log"
 
 
 every 20.minutes do
-  	rake "twitter:download_tweets"
+	rake "twitter:download_tweets"
 end
 
 every 20.minutes do 
