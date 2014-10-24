@@ -1,8 +1,8 @@
 namespace :log do
 	desc "RUN DAILY MON-FRI CREATE LOG FOR END OF DAY VALUATION"
 	task daily_valuation: :environment do
-		@user = User.all
-		@user.each do |user|
+		@users = User.all
+		@users.each do |user|
 			if user.logs.last.basket_empty
 				@log = Log.new
 				@log.user_id = user.id

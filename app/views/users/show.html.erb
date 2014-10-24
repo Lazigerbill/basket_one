@@ -20,7 +20,9 @@
             <tr>
               <td><%= stock.company_name %></td>
               <td><%= stock.yahoo_symbol %></td>
-              <td><button><%= link_to 'Remove', stock, method: :delete, data: { confirm: 'Are you sure?' } %></button></td>
+              <td>
+                <button><%= link_to 'Remove', stock, method: :delete, data: { confirm: 'Are you sure?' } %></button>
+              </td>
             </tr>
           <% end %>
         </tbody>
