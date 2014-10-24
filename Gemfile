@@ -10,7 +10,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'twitter'
 gem 'figaro'
-# gem 'jquery-ui-rails'
+gem 'jquery-ui-rails'
 gem 'whenever', :require => false
 gem 'sorcery'
 gem 'bourbon'
