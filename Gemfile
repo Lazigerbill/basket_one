@@ -25,6 +25,7 @@ group :development, :test do
 	gem 'pry-rails'
 	gem 'quiet_assets'
 	gem 'hirb'
+	gem 'sprockets_better_errors'
 end
 
 group :production do
