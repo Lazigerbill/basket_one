@@ -6,6 +6,7 @@ get "oauth/:provider" => "oauths#oauth", :as => :auth_at_provider
 get 'login' => 'user_sessions#new', :as => :login
 post 'logout' => 'user_sessions#destroy', :as => :logout
 get "index/about" => "index#about"
+get "index/rankings" => "index#rankings"
 
 
 root :to => 'index#index'

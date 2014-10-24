@@ -1,7 +1,7 @@
 class IndexController < ApplicationController
+	before_action :set_user
 	def index
 		@log = Log.new
-		@user = current_user
 		@stocks = []
 		@user.stocks.all.each do |stock|
 			@stocks << stock.yahoo_symbol
@@ -15,7 +15,7 @@ class IndexController < ApplicationController
 			# Tweet.download_tweets(Tweet.get_authorized, @twitter_ticker)
 			@tweets = Tweet.sort_tweets_for_the_past_number_of_days(@stock, 7)
 			@tweet_array = Tweet.tweet_count_array(@stock)
-		
+
 		elsif @stocks.size > 0
 			@stock = @stocks[0]
 			@twitter_ticker = "$" + @stock
@@ -36,8 +36,19 @@ class IndexController < ApplicationController
 	end
 
 	def about
-		
-		@user = current_user
-		
+
 	end
-end
+
+	def rankings
+		@users = User.all
+		@rank = []
+		@users.each do |user|
+			@rank<<user.logs.last
+		end
+		@rank.sort!{|a,b| b.asset_points <=> a.asset_points}
+	end
+
+		def set_user
+			@user = current_user
+		end
+	end

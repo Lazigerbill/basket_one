@@ -4,23 +4,26 @@
 # http://en.wikipedia.org/wiki/Cron
 
 # Example:
+# set :path, '/Users/Bill/desktop/Assignments/final'
 set :environment, :development
-set :path, '/Users/Bill/desktop/Assignments/final'
 set :output, "#{path}/log/cron.log"
-# set :environment, :development
+
 
 
 every 20.minutes do
-  rake "twitter:download_tweets"
+  	rake "twitter:download_tweets"
 end
 
 every 20.minutes do 
 	rake "stock:download_closing"
-	rake "rake log:daily_valuation"
+	rake "log:daily_valuation"
 end
-#
-# every 4.days do
-#   runner "AnotherModel.prune_old_records"
-# end
 
-# Learn more: http://github.com/javan/whenever
+every :weekday, :at => '5:30 pm' do
+	rake "stock:download_closing"
+end
+
+every :weekday, :at => '11:30 pm' do
+	rake "log:daily_valuation"
+end
+
