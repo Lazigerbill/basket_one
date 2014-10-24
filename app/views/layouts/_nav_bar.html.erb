@@ -2,13 +2,11 @@
 	<% if current_user %>
 	<header class="navigation">
 		<div class="navigation-wrapper">
-			<a href="javascript:void(0)" class="logo">
-				<%= image_tag "logo_white.gif" %>
-			</a>
+			<%= link_to image_tag("logo_white.gif"), root_path, :class => "logo" %>
 			<a href="" class="navigation-menu-button" id="js-mobile-menu">MENU</a>
 			<div class="nav">
 				<ul id="navigation-menu">
-					<li class="nav-link more"><a href="javascript:void(0)">My Basket</a>
+					<li class="nav-link more"><%= link_to "My Basket", root_path %>
 						<ul class="submenu">
 							<li><%= link_to "My Watchlist", user_path(current_user) %></li>
 							<li><%= link_to "My Transactions", user_logs_path(current_user) %></a></li>
