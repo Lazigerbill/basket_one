@@ -5,7 +5,7 @@
 # pusher_secret: abdc3b896a0ffb85d373
 # stripe_api_key: sk_test_2J0l093xOyW72XUYJHE4Dv2r
 # stripe_publishable_key: pk_test_ro9jV5SNwGb1yYlQfzG17LHK
-development:
+# development:
 secret_key_base: def0a2e9b5a4ff1149483abec1f5498d85e06124d9f6ec6398cfffd295627338761d52dd8ac6fe6274d67ab245407bc740b4436cf79d408a5c494d50d27676d3
 twitter_consumer_key: "tXwT9L55olSX0dyrrbwal93ok"
 twitter_consumer_secret: "h0FPW45m34rCTUPOTHJ8CUZ3oyTCJyozIPDPHHMPJfYOaUoNHL"
@@ -14,11 +14,11 @@ twitter_access_token_secret: "Ohd12dlQWmKK0LzW3v3qV8nMVPHFuyR37srvRSsEca542"
 yahoo_consumer_key: "dj0yJmk9OEMzb2FaeHlVSmpBJmQ9WVdrOVdWSmtTMlJtTlRJbWNHbzlNQS0tJnM9Y29uc3VtZXJzZWNyZXQmeD1kYw--"
 yahoo_consumer_secret: "35caae4a642a9a0a62fc0e41e7ac1535785e945a"
 
-#
-production:
-twitter_consumer_key: "tXwT9L55olSX0dyrrbwal93ok"
-twitter_consumer_secret: "h0FPW45m34rCTUPOTHJ8CUZ3oyTCJyozIPDPHHMPJfYOaUoNHL"
-twitter_access_token: "2748660599-4tTfu9dGWdiIMlzRuq2FVjyFRl2Ely73JJHriiY"
-twitter_access_token_secret: "Ohd12dlQWmKK0LzW3v3qV8nMVPHFuyR37srvRSsEca542"
-yahoo_consumer_key: "dj0yJmk9OEMzb2FaeHlVSmpBJmQ9WVdrOVdWSmtTMlJtTlRJbWNHbzlNQS0tJnM9Y29uc3VtZXJzZWNyZXQmeD1kYw--"
-yahoo_consumer_secret: "35caae4a642a9a0a62fc0e41e7ac1535785e945a"
+# #
+# production:
+# twitter_consumer_key: "tXwT9L55olSX0dyrrbwal93ok"
+# twitter_consumer_secret: "h0FPW45m34rCTUPOTHJ8CUZ3oyTCJyozIPDPHHMPJfYOaUoNHL"
+# twitter_access_token: "2748660599-4tTfu9dGWdiIMlzRuq2FVjyFRl2Ely73JJHriiY"
+# twitter_access_token_secret: "Ohd12dlQWmKK0LzW3v3qV8nMVPHFuyR37srvRSsEca542"
+# yahoo_consumer_key: "dj0yJmk9OEMzb2FaeHlVSmpBJmQ9WVdrOVdWSmtTMlJtTlRJbWNHbzlNQS0tJnM9Y29uc3VtZXJzZWNyZXQmeD1kYw--"
+# yahoo_consumer_secret: "35caae4a642a9a0a62fc0e41e7ac1535785e945a"
