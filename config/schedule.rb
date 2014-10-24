@@ -14,10 +14,10 @@ every 20.minutes do
 	rake "twitter:download_tweets"
 end
 
-every 20.minutes do 
-	rake "stock:download_closing"
-	rake "log:daily_valuation"
-end
+# every 20.minutes do 
+# 	rake "stock:download_closing"
+# 	rake "log:daily_valuation"
+# end
 
 every :weekday, :at => '5:30 pm' do
 	rake "stock:download_closing"
