@@ -20,7 +20,7 @@ function show_quote(url){
   $('#timeago').text(last_update);
 
 // to change color and direction of ticker arrow, depending on 'change'
-$('ticker_window').ready(function(){
+$('.ticker_window').ready(function(){
   if(parseFloat($('#change').text())>=0){
     $('#tick').html("<img id=\"tick_arrow\" src=\"/assets/uptick.gif\">");
     $('#change').css({"color":"green"});
@@ -31,7 +31,7 @@ $('ticker_window').ready(function(){
 });
 }  
 // to auto retrive live stock update every ?? seconds
-$('ticker_window').ready(function(){
+$('.ticker_window').ready(function(){
   setInterval(function(){
     $('#last_trade').effect("pulsate");
     $('#change').effect("pulsate");
