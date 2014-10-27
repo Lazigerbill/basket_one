@@ -13,7 +13,7 @@
       <% else %>
         <% current_investent = @user.logs.last.stock.yahoo_symbol %>
       <% end %>    
-      <p>Current investment: <span class = "user_info"><%= current_investent %></span></p>
+      <p>Current basket: <span class = "user_info"><%= current_investent %></span></p>
       <p>Total points: <span class = "user_info"><%= @user.logs.last.asset_points %></span></p>
   	</div>
     

@@ -7,7 +7,7 @@
     <%= content_tag :div, msg, class: "flash-notice" %>
     <% end %>
 
-    <h2>My Portfolio:</h2>
+    <h2>My Watchlist:</h2>
     <% if @user.stocks.length>0 %>
       <table class="table-borders">
         <thead>
@@ -35,7 +35,7 @@
       <h6>You currently don't have any stocks in your portfolio.</h2>
     <% end %>
     
-    <p>*add stocks to your portfolio by using the search bar at the top of this page.</p>
+    <%= link_to 'Add stocks to my watchlist', new_user_stock_path(current_user), :class => "sign-up" %>  
 
   </div>
 </div>

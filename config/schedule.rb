@@ -5,7 +5,7 @@
 
 # Example:
 # set :path, '/Users/Bill/desktop/Assignments/final'
-set :environment, :production
+set :environment, :development
 set :output, "#{path}/log/cron.log"
 
 

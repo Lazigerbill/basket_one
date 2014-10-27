@@ -1,2 +1,10 @@
-<h1>Stocks#new</h1>
-<p>Find me in app/views/stocks/new.html.erb</p>
+<div class="ticker_search_box">
+<h1>Add stocks to my watchlist</h1>
+<p>Start adding stocks to your watchlist by looking up company name below.</p>
+<em>Example: Best Buy</em>
+
+	<%= form_tag edit_user_path(@user), method: :get, authentication: false do %>
+		<%= text_field_tag :search, nil,  :placeholder => "Search by company name", :type => "search" %>
+		<%= submit_tag "Search" %>
+	<% end %>
+</div>
