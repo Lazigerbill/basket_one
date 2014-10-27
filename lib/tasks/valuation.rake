@@ -3,7 +3,7 @@ namespace :log do
 	task daily_valuation: :environment do
 		@users = User.all
 		@users.each do |user|
-			if user.logs.where({transactions: "BUY"}).count == 1
+			if user.logs.where({transactions: "BUY"}).count <= 1
 				investor_type = "New account"
 			elsif user.logs.where({transactions: "BUY", created_at: 3.day.ago..Time.now}).count <= 3	
 				investor_type = "Buy-and-Hold"
