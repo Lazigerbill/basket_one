@@ -19,7 +19,7 @@ every 20.minutes do
 	rake "log:daily_valuation"
 end
 
-every :weekday, :at => '5:30 pm' do
+every :weekday, :at => '11:00 pm' do
 	rake "stock:download_closing"
 end
 
