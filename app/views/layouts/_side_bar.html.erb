@@ -1,20 +1,23 @@
 
-<div class="side-image">
+
   <div class="images-wrapper">
-  	<h2>Account Information</h2>
-  	<%= image_tag @user.user_image, :class => "profile_pic" %>
-  	<p>Username: <span class = "user_info"><%= @user.email %></span> </p>
-  	<p>Member since: <span class = "user_info"><%= @user.created_at.strftime("%b %d, %Y") %></span></p>
-    <!-- future feature to identify investor type -->
-  	<p>Investor type: <span class = "investor_type"><%= @user.logs.last.investor_type %></span></p>
-    <% if @user.logs.last.basket_empty %> 
-      <% current_investent = "Cash is King!" %>
-    <% else %>
-      <% current_investent = @user.logs.last.stock.yahoo_symbol %>
-    <% end %>    
-    <p>Current investment: <span class = "user_info"><%= current_investent %></span></p>
-    <p>Total points: <span class = "user_info"><%= @user.logs.last.asset_points %></span></p>
-  	<br>
+  	<div class="account_info">
+      <h2>Account Information</h2>
+      <%= image_tag @user.user_image, :class => "profile_pic" %>
+      <p>Username: <span class = "user_info"><%= @user.email %></span> </p>
+      <p>Member since: <span class = "user_info"><%= @user.created_at.strftime("%b %d, %Y") %></span></p>
+      <!-- future feature to identify investor type -->
+      <p>Investor type: <span class = "investor_type"><%= @user.logs.last.investor_type %></span></p>
+      <% if @user.logs.last.basket_empty %> 
+        <% current_investent = "Cash is King!" %>
+      <% else %>
+        <% current_investent = @user.logs.last.stock.yahoo_symbol %>
+      <% end %>    
+      <p>Current investment: <span class = "user_info"><%= current_investent %></span></p>
+      <p>Total points: <span class = "user_info"><%= @user.logs.last.asset_points %></span></p>
+  	</div>
+    
+    <br>
   	<br>
   	<br>
     <%= link_to 'Go to my Dashboard', root_url, :class => "sign-up" %>	

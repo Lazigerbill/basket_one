@@ -1,41 +1,43 @@
 
 <div class="side-image">
-  <div class="images-wrapper"></div>
-    <div class="content">
-        <h2>Users rankings:</h2>
-            <table class = "table-border">
-                <thead>
-                    <tr>
-                        <th>Rank</th>
-                        <th></th>
-                        <th>Username</th>
-                        <th>Member since</th>
-                        <th>Investor type</th>
-                        <th>Eggs</th>
-                        <th>Current basket</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <% count = 1 %>
-                    <% @rank.each do |rank| %>
-                        <tr>
-                            <td><%= count %></td>
-                            <td><%= image_tag User.find(rank.user_id).user_image %></td>
-                            <td><%= User.find(rank.user_id).email %></td>
-                            <td><%= time_ago_in_words(User.find(rank.user_id).created_at) %></td>
-                            <td><%= rank.investor_type %></td>
-                            <td><%= rank.asset_points %></td>
-                            <td><%= Stock.find(rank.stock_id).yahoo_symbol if rank.stock_id !=nil %></td>
-                        </tr>
-                        <% count += 1 %>
-                    <% end %>
-                  </tbody>
-                </table>
-            </table>
-            
-    
+  
+  <%= render '/layouts/side_bar' %>
+  
+  <div class="content">
+    <h2>Users rankings:</h2>
+    <table class = "table-border">
+      <thead>
+        <tr>
+          <th>Rank</th>
+          <th></th>
+          <th>Username</th>
+          <th>Member since</th>
+          <th>Investor type</th>
+          <th>Eggs</th>
+          <th>Current basket</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% count = 1 %>
+        <% @rank.each do |rank| %>
+        <tr>
+          <td><%= count %></td>
+          <td><%= image_tag User.find(rank.user_id).user_image %></td>
+          <td><%= User.find(rank.user_id).email %></td>
+          <td><%= time_ago_in_words(User.find(rank.user_id).created_at) %></td>
+          <td><%= rank.investor_type %></td>
+          <td><%= rank.asset_points %></td>
+          <td><%= Stock.find(rank.stock_id).yahoo_symbol if rank.stock_id !=nil %></td>
+        </tr>
+        <% count += 1 %>
+        <% end %>
+      </tbody>
+    </table>
+  </table>
 
-  </div>
+
+
+</div>
 </div>
 
 

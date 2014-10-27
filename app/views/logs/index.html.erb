@@ -1,41 +1,44 @@
-<%= render '/layouts/side_bar' %>
+
+<div class="side-image">
+
+  <%= render '/layouts/side_bar' %>
 
 
-  <div class="content">
-      <% flash.each do |name, msg| %>
-        <%= content_tag :div, msg, class: "flash-notice" %>
-      <% end %>
+    <div class="content">
+        <% flash.each do |name, msg| %>
+          <%= content_tag :div, msg, class: "flash-notice" %>
+        <% end %>
 
-    <h2>My Transactions:</h2>
+      <h2>My Transactions:</h2>
 
-      <table id = "transaction_table" class="table-borders">
-        <thead>
-          <tr>
-            <th>Date</th>
-            <th>Transaction</th>
-            <th>Ticker Symbol</th>
-            <th>Number of shares</th>
-            <th>Transcation price</th>
-            <th>Remainder</th>
-            <th>Points</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @logs.each do |log| %>
+        <table id = "transaction_table" class="table-borders">
+          <thead>
             <tr>
-              <td><%= log.created_at %></td>
-              <td><%= log.transactions %></td>
-              <td><%= log.stock.yahoo_symbol if log.stock_id != nil %></td>
-              <td><%= log.number_of_shares %></td>
-              <td><%= log.transaction_price %></td>
-              <td><%= log.points %></td>
-              <td><%= log.asset_points %></td>
+              <th>Date</th>
+              <th>Transaction</th>
+              <th>Ticker Symbol</th>
+              <th>Number of shares</th>
+              <th>Transcation price</th>
+              <th>Remainder</th>
+              <th>Points</th>
             </tr>
-          <% end %>
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            <% @logs.each do |log| %>
+              <tr>
+                <td><%= log.created_at %></td>
+                <td><%= log.transactions %></td>
+                <td><%= log.stock.yahoo_symbol if log.stock_id != nil %></td>
+                <td><%= log.number_of_shares %></td>
+                <td><%= log.transaction_price %></td>
+                <td><%= log.points %></td>
+                <td><%= log.asset_points %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
 
+
+    </div>
 
   </div>
-
-</div>

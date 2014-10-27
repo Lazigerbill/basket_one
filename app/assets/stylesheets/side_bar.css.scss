@@ -1,0 +1,132 @@
+// SIDE IMAGE
+
+$side-image-background-top: #B5EBEB;
+$side-image-background-bottom: #5DAC5D;
+$side-image-border: 1px solid darken(transparentize($side-image-background-bottom, .8), 30);
+
+.side-image {
+	background: #F9F9F9;
+	min-height: 1020px;
+
+	@include media($large-screen) {
+		@include row(table);
+	}
+
+	.images-wrapper {
+		@include background(url('stock_exchange.jpg'), linear-gradient($side-image-background-top, $side-image-background-bottom), no-repeat $side-image-background-top scroll);
+		background-color: $side-image-background-top;
+		border-bottom: $side-image-border;
+		background-size: cover;
+		display: block;
+		min-height: 12em;
+		padding: 3em;
+		color: white;
+		font-weight: bold;
+
+
+		@include media($large-screen) {
+			@include span-columns(4);
+			background-position: left;
+			background-size: cover;
+			border-right: $side-image-border;
+		}
+		.profile_pic{
+			width: 80px;
+			height: auto;
+			margin: 10px;
+			float: none;
+		}
+	}
+
+	.content {
+		@include span-columns(12);
+		padding: 1em 1em 4em 1em;
+
+		@include media($large-screen) {
+			@include span-columns(8);
+			padding: 4em 4em 8em 4em;
+		}
+	}
+
+	.content h1 {
+		margin-bottom: .9em;
+	}
+
+	.content h4 {
+		background: $side-image-background-bottom;
+		color: white;
+		display: inline-block;
+		font-size: .75em;
+		font-weight: 800;
+		margin-bottom: 1.3em;
+		padding: 3px 8px;
+		text-transform: uppercase;
+	}
+
+	.content p {
+		color: gray;
+		margin-bottom: 3em;
+	}
+
+	.content button {
+		@include button(simple, white);
+		font-size: $base-font-size;
+		outline: none;
+	}
+	@include reset-display();
+}
+
+// To Dashboard Button
+.sign-up {
+	margin-top: 1.5em;
+    // float: right;
+    @include transition (all 0.2s ease-in-out);
+    // display: inline;
+    background: $base-accent-color;
+    border-radius: $base-border-radius; 
+    color: white;
+    font-size: 1.2em;  
+    font-weight: 800;
+    text-transform: uppercase;
+    padding: .6em .8em;
+
+    @include media($large-screen) {
+    	padding: .5em 1em;
+    }
+
+    &:hover {
+    	background: lighten($base-accent-color, 10);
+    }
+}
+
+ // Investor type
+ .investor_type {
+ 	background: green;
+ 	color: white;
+ 	display: inline-block;
+ 	font-size: .7em;
+ 	font-weight: 800;
+ 	margin-bottom: 2em;
+ 	padding: 3px 8px;
+ 	text-transform: uppercase;
+
+ 	@include media($large-screen) {
+ 		margin-bottom: 3.3em;
+ 	}
+ }
+
+ .user_info{
+ 	color: $base-accent-color;
+ }
+
+.flash-notice{
+	@extend %flash-success;
+}
+
+.flash-alert{
+	@extend %flash-error;
+}
+
+.account_info{
+	background-color: rgba(0,0,0,0.5);
+}
