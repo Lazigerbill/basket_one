@@ -11,7 +11,6 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'twitter'
 gem 'figaro'
 gem 'jquery-ui-rails'
-gem 'whenever', :require => false
 gem 'sorcery'
 gem 'bourbon'
 gem 'neat'
@@ -25,6 +24,7 @@ group :development, :test do
 	gem 'pry-rails'
 	gem 'quiet_assets'
 	gem 'hirb'
+	gem 'whenever', :require => false
 end
 
 group :production do
