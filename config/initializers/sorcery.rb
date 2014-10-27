@@ -106,8 +106,8 @@ Rails.application.config.sorcery.configure do |config|
   #
   config.twitter.key = Figaro.env.twitter_consumer_key
   config.twitter.secret = Figaro.env.twitter_consumer_secret
-  config.twitter.callback_url = "http://0.0.0.0:3000/oauth/callback?provider=twitter"
-  # config.twitter.callback_url = "http://basket-one-demo.herokuapp.com/oauth/callback?provider=twitter"
+  # config.twitter.callback_url = "http://0.0.0.0:3000/oauth/callback?provider=twitter"
+  config.twitter.callback_url = "http://basket-one-demo.herokuapp.com/oauth/callback?provider=twitter"
   config.twitter.user_info_mapping = {:email => "screen_name", :user_image => "profile_image_url"}
   #
   # config.facebook.key = ""
