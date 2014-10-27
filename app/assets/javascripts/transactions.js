@@ -9,7 +9,7 @@ ready = function() {
 	});
 
 	$('#transaction_table').DataTable({
-        "order": [[ 0, "desc" ]]
+        "order": [[ 0, "desc" ],[1, "asc"]]
     });
 }
   
