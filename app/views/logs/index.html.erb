@@ -19,7 +19,6 @@
               <th>Ticker Symbol</th>
               <th>Number of shares</th>
               <th>Transcation price</th>
-              <th>Remainder</th>
               <th>Points</th>
             </tr>
           </thead>
@@ -31,7 +30,6 @@
                 <td><%= log.stock.yahoo_symbol if log.stock_id != nil %></td>
                 <td><%= log.number_of_shares %></td>
                 <td><%= log.transaction_price %></td>
-                <td><%= log.points %></td>
                 <td><%= log.asset_points %></td>
               </tr>
             <% end %>

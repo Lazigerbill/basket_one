@@ -3,6 +3,12 @@
 
 var ready;
 ready = function() {  
+  var $newsWindow = $('.news_window');
+  if ($newsWindow.length != 0) {
+    var url_news = "https://query.yahooapis.com/v1/public/yql?q=select%20title%2C%20link%20from%20rss%20where%20url%3D%22http%3A%2F%2Ffinance.yahoo.com%2Frss%2Fheadline%3Fs%3D" + qticker + "%22&format=json&diagnostics=true&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback=window.show_news"
+    $.getScript(url_news);
+  }
+};  
 
   show_news = function(url) {  
     var items = url.query.results.item;  
@@ -34,15 +40,9 @@ ready = function() {
     });
   }
 
-  var $newsWindow = $('.news_window');
-  if ($newsWindow.length != 0) {
-    var url_news = "https://query.yahooapis.com/v1/public/yql?q=select%20title%2C%20link%20from%20rss%20where%20url%3D%22http%3A%2F%2Ffinance.yahoo.com%2Frss%2Fheadline%3Fs%3D" + qticker + "%22&format=json&diagnostics=true&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback=window.show_news"
-    $.getScript(url_news);
-  }
-
-};
 
 
-$(document).ready(ready);
-$(document).on('page:load', ready);
+
+$('.news_window').ready(ready);
+$('.news_window').on('page:load', ready);
 
