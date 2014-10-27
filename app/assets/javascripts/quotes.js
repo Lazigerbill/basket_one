@@ -48,5 +48,5 @@ var ready;
 
 }
   
-$('.ticker_window').ready(ready);
-$('.ticker_window').on('page:load', ready);
+$(document).ready(ready);
+$(document).on('page:load', ready);

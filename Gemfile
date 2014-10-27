@@ -17,13 +17,13 @@ gem 'neat'
 gem 'httparty'
 gem 'pg', '~> 0.17.1'
 gem 'jquery-datatables-rails', '~> 2.2.3'
+gem 'hirb'
 
 
 group :development, :test do 
 	gem 'spring'
 	gem 'pry-rails'
 	gem 'quiet_assets'
-	gem 'hirb'
 	gem 'whenever', :require => false
 end
 
