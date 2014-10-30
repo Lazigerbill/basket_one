@@ -5,6 +5,7 @@
 .twitter_window{
 	@include span-columns(6); 
   @include omega(); 
+  clear: right;
 
 
 	margin: 2.5px 5px 0px 2.5px;

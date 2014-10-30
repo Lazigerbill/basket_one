@@ -1,7 +1,7 @@
 .topbar{
 	@include row();
 	background-color: black;
-/*	position: absolute;*/
+	/*	position: absolute;*/
 
 	top: 0px;
 	width: 100%;
@@ -12,8 +12,8 @@
 #headline{
 	list-style-type: none;
 	width: $large-screen
-/*	background-color: rgba(255,0,0,0.2);*/
-/*	padding: 0px;*/
+	/*	background-color: rgba(255,0,0,0.2);*/
+	/*	padding: 0px;*/
 
 }
 
@@ -52,6 +52,7 @@
 .news_window{
 	display: inline-block;
 	margin-top: 5px;
+	width: 80%;
 }
 
 .top_news{
