@@ -18,6 +18,7 @@ gem 'httparty'
 gem 'pg', '~> 0.17.1'
 gem 'jquery-datatables-rails', '~> 2.2.3'
 gem 'hirb'
+gem 'vimeo'
 
 
 group :development, :test do 
