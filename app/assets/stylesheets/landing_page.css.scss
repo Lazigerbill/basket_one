@@ -156,9 +156,9 @@ $device-screen-image: '/assets/screen.png';
   $icon-bullet-size: 3.5em;
 
   overflow: auto;
-  margin-top: 2em;
+  // margin-top: 2em;
   margin: 2em;
-  margin-bottom: $base-line-height;
+  // margin-bottom: $base-line-height;
 
   // change ".three-col-bullet" class to this for two bullet layout
   .two-col-bullet {
@@ -186,7 +186,8 @@ $device-screen-image: '/assets/screen.png';
   .bullet-icon {
     float: left;
     background: $base-accent-color;
-    padding: $icon-bullet-size /4;
+    color: white;
+    padding: 0.75em;
     border-radius: 50%;
     width: $icon-bullet-size;
     height: $icon-bullet-size;
@@ -204,6 +205,18 @@ $device-screen-image: '/assets/screen.png';
     background: adjust-hue($base-accent-color, -140);
   }
 
+  .bullet-icon-4 {
+    background: adjust-hue($base-accent-color, -200);
+  }
+
+  .bullet-icon-5 {
+    background: adjust-hue($base-accent-color, -250);
+  }
+
+  .bullet-icon-6 {
+    background: adjust-hue($base-accent-color, -300);
+  }
+
   .bullet-content {
     margin-left: $icon-bullet-size *1.4;
     margin-bottom: 2em;
@@ -217,5 +230,6 @@ $device-screen-image: '/assets/screen.png';
     display: inline-block;
   }
 }
+
 
 
