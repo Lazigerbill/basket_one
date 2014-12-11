@@ -91,12 +91,25 @@ $device-screen-image: '/assets/screen.png';
 .device-text {
   color: $device-text-color;
   padding: 2em;
+    // @inlcude span-columns(6);
 
   @include media($large-screen) {
-    max-width: 50%;
-    padding: 4em;
+    max-width: 32%;
+    padding: 3em;
     float: left;
   }
+
+  // @include media($medium-screen) {
+  //   max-width: 70%;
+  //   padding: 4em;
+  //   float: left;
+  // }
+
+  // @include media($small-screen) {
+  //   max-width: 32%;
+  //   padding: 4em;
+  //   float: left;
+  // }
 
   h4 {
     margin-bottom: .5em;
@@ -155,6 +168,7 @@ $device-screen-image: '/assets/screen.png';
 .bullets {
   $icon-bullet-size: 3.5em;
 
+  clear: both;
   overflow: auto;
   margin: 2em;
   // margin-bottom: $base-line-height;
